@@ -1,0 +1,138 @@
+.section {
+  padding: 120px 0;
+  background: var(--black-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--amber), transparent);
+  opacity: 0.2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.header {
+  margin-bottom: 72px;
+}
+
+.eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.desc {
+  font-size: 0.95rem;
+  color: var(--white-dim);
+  font-weight: 300;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.step {
+  position: relative;
+  padding: 36px 32px 36px 0;
+  border-left: 1px solid var(--black-border);
+  padding-left: 32px;
+}
+
+.step:first-child {
+  border-left-color: var(--amber);
+}
+
+.stepNumber {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(232, 169, 0, 0.12);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  transition: color 0.3s;
+}
+
+.step:hover .stepNumber {
+  color: rgba(232, 169, 0, 0.25);
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+.stepText {
+  font-size: 0.88rem;
+  color: var(--white-dim);
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 220px;
+}
+
+.connector {
+  position: absolute;
+  top: 48px;
+  right: -1px;
+  width: 2px;
+  height: 20px;
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .step:nth-child(2) {
+    border-left-color: var(--amber);
+  }
+
+  .stepText { max-width: 100%; }
+}
+
+@media (max-width: 560px) {
+  .steps { grid-template-columns: 1fr; }
+  .step { padding: 24px 0 24px 24px; }
+
+  .step:nth-child(n) {
+    border-left-color: var(--black-border);
+  }
+  .step:first-child {
+    border-left-color: var(--amber);
+  }
+
+  .container { padding: 0 20px; }
+  .section { padding: 80px 0; }
+}

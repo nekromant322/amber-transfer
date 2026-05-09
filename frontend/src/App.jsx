@@ -1,0 +1,21 @@
+import Nav from './components/Nav'
+import Hero from './components/Hero'
+import HowItWorks from './components/HowItWorks'
+import Services from './components/Services'
+import Tariffs from './components/Tariffs'
+import FAQ from './components/FAQ'
+import Footer from './components/Footer'
+
+export default function App() {
+  return (
+    <>
+      <Nav />
+      <Hero />
+      <HowItWorks />
+      <Services />
+      <Tariffs />
+      <FAQ />
+      <Footer />
+    </>
+  )
+}

@@ -1,0 +1,130 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 28px 0;
+  transition: padding 0.4s ease, background 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.nav.scrolled {
+  padding: 16px 0;
+  background: rgba(8, 8, 8, 0.88);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232, 169, 0, 0.08);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  transition: color 0.2s;
+}
+
+.logo em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.logoIcon {
+  color: var(--amber);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--white);
+}
+
+.cta {
+  padding: 10px 22px !important;
+  background: var(--amber) !important;
+  color: var(--black) !important;
+  border-radius: 2px;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  transition: background 0.2s, transform 0.2s !important;
+}
+
+.cta:hover {
+  background: var(--amber-light) !important;
+  transform: translateY(-1px);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.burger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burger.active span:nth-child(2) { opacity: 0; }
+.burger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  .burger { display: flex; }
+
+  .links {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--black);
+    gap: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 99;
+  }
+
+  .links.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .links a { font-size: 1rem; }
+
+  .inner { padding: 0 20px; }
+}

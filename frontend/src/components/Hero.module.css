@@ -1,0 +1,226 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--black);
+  padding: 120px 0 80px;
+}
+
+/* Subtle grid pattern */
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232, 169, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 169, 0, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+}
+
+.bgGlow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 169, 0, 0.07) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.bgLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 169, 0, 0.15), transparent);
+  transform: translateY(-50%);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+}
+
+.content {
+  animation: fadeUp 0.9s ease both;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 28px;
+}
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--amber);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.headline {
+  font-family: var(--font-display);
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 28px;
+}
+
+.headlineTop {
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.headlineDivider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 12px 0;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--amber), transparent);
+  max-width: 80px;
+}
+
+.arrowIcon {
+  font-size: 1.6rem;
+  color: var(--amber);
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+.headlineBottom {
+  font-size: clamp(4rem, 7vw, 7.5rem);
+  font-weight: 600;
+  color: var(--white);
+}
+
+.headlineBottom em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--white-dim);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat strong {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--amber);
+  line-height: 1;
+}
+
+.stat span {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+.statDivider {
+  width: 1px;
+  height: 36px;
+  background: var(--black-border);
+}
+
+.widgetWrap {
+  animation: fadeUp 0.9s 0.2s ease both;
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+
+.scrollLine {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(232, 169, 0, 0.4));
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0%, 100% { transform: scaleY(1); transform-origin: top; }
+  50% { transform: scaleY(0.5); transform-origin: top; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 960px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 0 20px;
+  }
+
+  .headlineTop { font-size: 3rem; }
+  .headlineBottom { font-size: 3.8rem; }
+}
+
+@media (max-width: 480px) {
+  .headlineTop { font-size: 2.4rem; }
+  .headlineBottom { font-size: 3rem; }
+  .stats { gap: 16px; }
+}
