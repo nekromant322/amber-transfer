@@ -17,7 +17,7 @@ services:
         max-size: 50m
 
   transfer-backend:
-    image: nekromant322/transfer-backend:latest
+    image: ghcr.io/nekromant322/transfer-backend:latest
     container_name: transfer-backend
     restart: unless-stopped
     environment:
@@ -33,7 +33,7 @@ services:
       - transffer-db
 
   transfer-frontend:
-    image: nekromant322/transfer-frontend:latest
+    image: ghcr.io/nekromant322/transfer-frontend:latest
     container_name: transfer-frontend
     restart: unless-stopped
     ports:
