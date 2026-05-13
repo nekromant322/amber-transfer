@@ -67,21 +67,21 @@
   margin-bottom: 18px;
 }
 
-nav ul {
+.navList {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-nav ul a {
+.navList a {
   font-size: 0.85rem;
   color: var(--white-dim);
   font-weight: 300;
   transition: color 0.2s;
 }
 
-nav ul a:hover {
+.navList a:hover {
   color: var(--white);
 }
 

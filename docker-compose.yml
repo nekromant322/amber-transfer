@@ -1,12 +1,12 @@
 version: '3.8'
 
 services:
-  transffer-db:
+  transfer-db:
     image: postgres:14.1-alpine
-    container_name: transffer-db
+    container_name: transfer-db
     restart: always
     environment:
-      POSTGRES_DB: transffer_db
+      POSTGRES_DB: transfer_db
       POSTGRES_USER: ${TRANSFER_DB_USER:-postgres}
       POSTGRES_PASSWORD: ${TRANSFER_DB_PASSWORD:-postgres}
     ports:
@@ -30,7 +30,7 @@ services:
       options:
         max-size: 50m
     depends_on:
-      - transffer-db
+      - transfer-db
 
   transfer-frontend:
     image: ghcr.io/nekromant322/transfer-frontend:latest

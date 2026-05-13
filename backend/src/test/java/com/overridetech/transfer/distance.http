@@ -1,0 +1,33 @@
+# Happy path — два известных города
+GET http://localhost:8080/api/distance?from=Kaliningrad&to=Warsaw
+Accept: application/json
+
+###
+
+# Города с пробелами в названии
+GET http://localhost:8080/api/distance?from=New%20York&to=Los%20Angeles
+Accept: application/json
+
+###
+
+# Города в одной стране
+GET http://localhost:8080/api/distance?from=Kyiv&to=Lviv
+Accept: application/json
+
+###
+
+# Один и тот же город — расстояние должно быть 0
+GET http://localhost:8080/api/distance?from=Paris&to=Paris
+Accept: application/json
+
+###
+
+# Несуществующий город — ожидаем 400 с полем error
+GET http://localhost:8080/api/distance?from=Kyiv&to=Qwertyuiopasdfgh
+Accept: application/json
+
+###
+
+# Пустой параметр — ожидаем 400
+GET http://localhost:8080/api/distance?from=&to=Berlin
+Accept: application/json

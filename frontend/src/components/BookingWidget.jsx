@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './BookingWidget.module.css'
 
 const cities = [

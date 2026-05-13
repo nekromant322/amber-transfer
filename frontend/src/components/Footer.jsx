@@ -29,7 +29,7 @@ export default function Footer() {
 
           <nav className={styles.nav}>
             <p className={styles.navTitle}>Навигация</p>
-            <ul>
+            <ul className={styles.navList}>
               {navLinks.map(l => (
                 <li key={l.href}>
                   <a href={l.href}>{l.label}</a>
