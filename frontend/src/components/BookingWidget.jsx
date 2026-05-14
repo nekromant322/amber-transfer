@@ -1,19 +1,13 @@
 'use client'
 
+import { useState } from 'react'
 import styles from './BookingWidget.module.css'
-
-const cities = [
-  'Калининград',
-  'Гданьск',
-  'Варшава',
-  'Каунас',
-  'Вильнюс',
-  'Рига',
-  'Берлин',
-  'Прага',
-]
+import CityInput from './CityInput'
 
 export default function BookingWidget() {
+  const [from, setFrom] = useState('')
+  const [to, setTo] = useState('')
+
   return (
     <div className={styles.widget}>
       <div className={styles.header}>
@@ -32,22 +26,17 @@ export default function BookingWidget() {
             </span>
             Откуда
           </label>
-          <div className={styles.selectWrap}>
-            <select className={styles.select} defaultValue="">
-              <option value="" disabled>Выберите город</option>
-              {cities.map(c => <option key={c}>{c}</option>)}
-            </select>
-            <span className={styles.chevron}>
-              <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-            </span>
-          </div>
+          <CityInput placeholder="Введите город" value={from} onChange={setFrom} />
         </div>
 
         <div className={styles.swapWrap} aria-hidden="true">
           <div className={styles.swapLine} />
-          <button className={styles.swapBtn} tabIndex="-1" aria-hidden="true">
+          <button
+            className={styles.swapBtn}
+            tabIndex="-1"
+            aria-hidden="true"
+            onClick={() => { const t = from; setFrom(to); setTo(t) }}
+          >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 4.5H12M9.5 2L12 4.5L9.5 7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M12 9.5H2M4.5 7L2 9.5L4.5 12" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -66,17 +55,7 @@ export default function BookingWidget() {
             </span>
             Куда
           </label>
-          <div className={styles.selectWrap}>
-            <select className={styles.select} defaultValue="">
-              <option value="" disabled>Выберите город</option>
-              {cities.map(c => <option key={c}>{c}</option>)}
-            </select>
-            <span className={styles.chevron}>
-              <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-            </span>
-          </div>
+          <CityInput placeholder="Введите город" value={to} onChange={setTo} />
         </div>
 
         <div className={styles.field}>

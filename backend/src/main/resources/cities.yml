@@ -1,0 +1,921 @@
+european:
+  cities:
+    - { ru: "Калининград", lat: "Kaliningrad" }
+    - { ru: "Берлин", lat: "Berlin" }
+    - { ru: "Мадрид", lat: "Madrid" }
+    - { ru: "Рим", lat: "Rome" }
+    - { ru: "Баку", lat: "Baku" }
+    - { ru: "Париж", lat: "Paris" }
+    - { ru: "Вена", lat: "Vienna" }
+    - { ru: "Минск", lat: "Minsk" }
+    - { ru: "Гамбург", lat: "Hamburg" }
+    - { ru: "Варшава", lat: "Warsaw" }
+    - { ru: "Барселона", lat: "Barcelona" }
+    - { ru: "Бухарест", lat: "Bucharest" }
+    - { ru: "Будапешт", lat: "Budapest" }
+    - { ru: "Белград", lat: "Belgrade" }
+    - { ru: "Мюнхен", lat: "Munich" }
+    - { ru: "Прага", lat: "Prague" }
+    - { ru: "Милан", lat: "Milan" }
+    - { ru: "София", lat: "Sofia" }
+    - { ru: "Кёльн", lat: "Cologne" }
+    - { ru: "Стокгольм", lat: "Stockholm" }
+    - { ru: "Неаполь", lat: "Naples" }
+    - { ru: "Амстердам", lat: "Amsterdam" }
+    - { ru: "Марсель", lat: "Marseille" }
+    - { ru: "Турин", lat: "Turin" }
+    - { ru: "Афины", lat: "Athens" }
+    - { ru: "Краков", lat: "Krakow" }
+    - { ru: "Копенгаген", lat: "Copenhagen" }
+    - { ru: "Лодзь", lat: "Lodz" }
+    - { ru: "Палермо", lat: "Palermo" }
+    - { ru: "Вроцлав", lat: "Wroclaw" }
+    - { ru: "Кишинёв", lat: "Chisinau" }
+    - { ru: "Рига", lat: "Riga" }
+    - { ru: "Гётеборг", lat: "Gothenburg" }
+    - { ru: "Вильнюс", lat: "Vilnius" }
+    - { ru: "Лиссабон", lat: "Lisbon" }
+    - { ru: "Роттердам", lat: "Rotterdam" }
+    - { ru: "Загреб", lat: "Zagreb" }
+    - { ru: "Познань", lat: "Poznan" }
+    - { ru: "Скопье", lat: "Skopje" }
+    - { ru: "Генуя", lat: "Genoa" }
+    - { ru: "Гданьск", lat: "Gdansk" }
+    - { ru: "Осло", lat: "Oslo" }
+    - { ru: "Валенсия", lat: "Valencia" }
+    - { ru: "Таллин", lat: "Tallinn" }
+    - { ru: "Гаага", lat: "The Hague" }
+    - { ru: "Севилья", lat: "Seville" }
+    - { ru: "Братислава", lat: "Bratislava" }
+    - { ru: "Антверпен", lat: "Antwerp" }
+    - { ru: "Тулуза", lat: "Toulouse" }
+    - { ru: "Лилль", lat: "Lille" }
+    - { ru: "Брюссель", lat: "Brussels" }
+    - { ru: "Любляна", lat: "Ljubljana" }
+    - { ru: "Ницца", lat: "Nice" }
+    - { ru: "Болонья", lat: "Bologna" }
+    - { ru: "Флоренция", lat: "Florence" }
+    - { ru: "Щецин", lat: "Szczecin" }
+    - { ru: "Салоники", lat: "Thessaloniki" }
+    - { ru: "Нант", lat: "Nantes" }
+    - { ru: "Цюрих", lat: "Zurich" }
+    - { ru: "Утрехт", lat: "Utrecht" }
+    - { ru: "Страсбург", lat: "Strasbourg" }
+    - { ru: "Монпелье", lat: "Montpellier" }
+    - { ru: "Бордо", lat: "Bordeaux" }
+    - { ru: "Бари", lat: "Bari" }
+    - { ru: "Катания", lat: "Catania" }
+    - { ru: "Люблин", lat: "Lublin" }
+    - { ru: "Быдгощ", lat: "Bydgoszcz" }
+    - { ru: "Белосток", lat: "Bialystok" }
+    - { ru: "Дортмунд", lat: "Dortmund" }
+    - { ru: "Дюссельдорф", lat: "Dusseldorf" }
+    - { ru: "Эссен", lat: "Essen" }
+    - { ru: "Лейпциг", lat: "Leipzig" }
+    - { ru: "Франкфурт", lat: "Frankfurt" }
+    - { ru: "Бремен", lat: "Bremen" }
+    - { ru: "Дрезден", lat: "Dresden" }
+    - { ru: "Ренн", lat: "Rennes" }
+    - { ru: "Нюрнберг", lat: "Nuremberg" }
+    - { ru: "Ганновер", lat: "Hanover" }
+    - { ru: "Катовице", lat: "Katowice" }
+    - { ru: "Гдыня", lat: "Gdynia" }
+    - { ru: "Кишинёв", lat: "Chisinau" }
+    - { ru: "Гомель", lat: "Gomel" }
+    - { ru: "Порту", lat: "Porto" }
+    - { ru: "Венеция", lat: "Venice" }
+    - { ru: "Верона", lat: "Verona" }
+    - { ru: "Брага", lat: "Braga" }
+    - { ru: "Сараево", lat: "Sarajevo" }
+    - { ru: "Клуж-Напока", lat: "Cluj-Napoca" }
+    - { ru: "Яссы", lat: "Iasi" }
+    - { ru: "Тимишоара", lat: "Timisoara" }
+    - { ru: "Ченстохова", lat: "Czestochowa" }
+    - { ru: "Могилёв", lat: "Mogilev" }
+    - { ru: "Витебск", lat: "Vitebsk" }
+    - { ru: "Гродно", lat: "Grodno" }
+    - { ru: "Констанца", lat: "Constanta" }
+    - { ru: "Мальмё", lat: "Malmo" }
+    - { ru: "Дуйсбург", lat: "Duisburg" }
+    - { ru: "Бохум", lat: "Bochum" }
+    - { ru: "Вупперталь", lat: "Wuppertal" }
+    - { ru: "Радом", lat: "Radom" }
+    - { ru: "Сосновец", lat: "Sosnowiec" }
+    - { ru: "Крагуевац", lat: "Kragujevac" }
+    - { ru: "Сараево", lat: "Sarajevo" }
+    - { ru: "Брест", lat: "Brest" }
+    - { ru: "Месcина", lat: "Messina" }
+    - { ru: "Падуя", lat: "Padova" }
+    - { ru: "Триест", lat: "Trieste" }
+    - { ru: "Брешиа", lat: "Brescia" }
+    - { ru: "Билефельд", lat: "Bielefeld" }
+    - { ru: "Бонн", lat: "Bonn" }
+    - { ru: "Нови-Сад", lat: "Novi Sad" }
+    - { ru: "Крайова", lat: "Craiova" }
+    - { ru: "Плоешти", lat: "Ploiesti" }
+    - { ru: "Брашов", lat: "Brasov" }
+    - { ru: "Галац", lat: "Galati" }
+    - { ru: "Мюнстер", lat: "Munster" }
+    - { ru: "Мангейм", lat: "Mannheim" }
+    - { ru: "Карлсруэ", lat: "Karlsruhe" }
+    - { ru: "Таранто", lat: "Taranto" }
+    - { ru: "Прато", lat: "Prato" }
+    - { ru: "Реджо-ди-Калабрия", lat: "Reggio Calabria" }
+    - { ru: "Упсала", lat: "Uppsala" }
+    - { ru: "Торунь", lat: "Torun" }
+    - { ru: "Кельце", lat: "Kielce" }
+    - { ru: "Каунас", lat: "Kaunas" }
+    - { ru: "Аугсбург", lat: "Augsburg" }
+    - { ru: "Висбаден", lat: "Wiesbaden" }
+    - { ru: "Ниш", lat: "Nis" }
+    - { ru: "Гент", lat: "Ghent" }
+    - { ru: "Жешув", lat: "Rzeszow" }
+    - { ru: "Гливице", lat: "Gliwice" }
+    - { ru: "Забже", lat: "Zabrze" }
+    - { ru: "Битом", lat: "Bytom" }
+    - { ru: "Бобруйск", lat: "Bobruisk" }
+    - { ru: "Модена", lat: "Modena" }
+    - { ru: "Ливорно", lat: "Livorno" }
+    - { ru: "Орадя", lat: "Oradea" }
+    - { ru: "Арад", lat: "Arad" }
+    - { ru: "Бакэу", lat: "Bacau" }
+    - { ru: "Мёнхенгладбах", lat: "Monchengladbach" }
+    - { ru: "Гельзенкирхен", lat: "Gelsenkirchen" }
+    - { ru: "Ахен", lat: "Aachen" }
+    - { ru: "Брауншвейг", lat: "Braunschweig" }
+    - { ru: "Киль", lat: "Kiel" }
+    - { ru: "Хемниц", lat: "Chemnitz" }
+    - { ru: "Галле", lat: "Halle" }
+    - { ru: "Магдебург", lat: "Magdeburg" }
+    - { ru: "Бельско-Бяла", lat: "Bielsko-Biala" }
+    - { ru: "Ольштын", lat: "Olsztyn" }
+    - { ru: "Тирана", lat: "Tirana" }
+    - { ru: "Кальяри", lat: "Cagliari" }
+    - { ru: "Парма", lat: "Parma" }
+    - { ru: "Феррара", lat: "Ferrara" }
+    - { ru: "Реджо-нель-Эмилия", lat: "Reggio Emilia" }
+    - { ru: "Перуджа", lat: "Perugia" }
+    - { ru: "Баня-Лука", lat: "Banja Luka" }
+    - { ru: "Марибор", lat: "Maribor" }
+    - { ru: "Суботица", lat: "Subotica" }
+    - { ru: "Тузла", lat: "Tuzla" }
+    - { ru: "Зеница", lat: "Zenica" }
+    - { ru: "Барановичи", lat: "Baranavichy" }
+    - { ru: "Борисов", lat: "Borisov" }
+    - { ru: "Питешти", lat: "Pitesti" }
+    - { ru: "Байя-Маре", lat: "Baia Mare" }
+    - { ru: "Бузэу", lat: "Buzau" }
+    - { ru: "Ботошани", lat: "Botosani" }
+    - { ru: "Рымнику-Вылча", lat: "Ramnicu Valcea" }
+    - { ru: "Сату-Маре", lat: "Satu Mare" }
+    - { ru: "Сибиу", lat: "Sibiu" }
+    - { ru: "Амадора", lat: "Amadora" }
+    - { ru: "Вила-Нова-де-Гайа", lat: "Vila Nova de Gaia" }
+    - { ru: "Амерсфорт", lat: "Amersfoort" }
+    - { ru: "Эйндховен", lat: "Eindhoven" }
+    - { ru: "Тилбург", lat: "Tilburg" }
+    - { ru: "Алмере", lat: "Almere" }
+    - { ru: "Гронинген", lat: "Groningen" }
+    - { ru: "Бреда", lat: "Breda" }
+    - { ru: "Неймеген", lat: "Nijmegen" }
+    - { ru: "Апелдорн", lat: "Apeldoorn" }
+    - { ru: "Энсхеде", lat: "Enschede" }
+    - { ru: "Харлем", lat: "Haarlem" }
+    - { ru: "Арнем", lat: "Arnhem" }
+    - { ru: "Фрайбург", lat: "Freiburg" }
+    - { ru: "Потсдам", lat: "Potsdam" }
+    - { ru: "Оснабрюк", lat: "Osnabruck" }
+    - { ru: "Людвигсхафен", lat: "Ludwigshafen" }
+    - { ru: "Ольденбург", lat: "Oldenburg" }
+    - { ru: "Леверкузен", lat: "Leverkusen" }
+    - { ru: "Гейдельберг", lat: "Heidelberg" }
+    - { ru: "Золинген", lat: "Solingen" }
+    - { ru: "Дармштадт", lat: "Darmstadt" }
+    - { ru: "Херне", lat: "Herne" }
+    - { ru: "Регенсбург", lat: "Regensburg" }
+    - { ru: "Падерборн", lat: "Paderborn" }
+    - { ru: "Ингольштадт", lat: "Ingolstadt" }
+    - { ru: "Вюрцбург", lat: "Wurzburg" }
+    - { ru: "Вольфсбург", lat: "Wolfsburg" }
+    - { ru: "Гёттинген", lat: "Gottingen" }
+    - { ru: "Хаген", lat: "Hagen" }
+    - { ru: "Хамм", lat: "Hamm" }
+    - { ru: "Эрфурт", lat: "Erfurt" }
+    - { ru: "Оберхаузен", lat: "Oberhausen" }
+    - { ru: "Росток", lat: "Rostock" }
+    - { ru: "Кассель", lat: "Kassel" }
+    - { ru: "Саарбрюккен", lat: "Saarbrucken" }
+    - { ru: "Мюльхайм-ан-дер-Рур", lat: "Mulheim an der Ruhr" }
+    - { ru: "Крефельд", lat: "Krefeld" }
+    - { ru: "Майнц", lat: "Mainz" }
+    - { ru: "Любек", lat: "Lubeck" }
+    - { ru: "Хельсинки", lat: "Helsinki" }
+    - { ru: "Эспоо", lat: "Espoo" }
+    - { ru: "Тампере", lat: "Tampere" }
+    - { ru: "Вантаа", lat: "Vantaa" }
+    - { ru: "Оулу", lat: "Oulu" }
+    - { ru: "Турку", lat: "Turku" }
+    - { ru: "Ювяскюля", lat: "Jyvaskyla" }
+    - { ru: "Лахти", lat: "Lahti" }
+    - { ru: "Куопио", lat: "Kuopio" }
+    - { ru: "Пори", lat: "Pori" }
+    - { ru: "Коувола", lat: "Kouvola" }
+    - { ru: "Йоэнсуу", lat: "Joensuu" }
+    - { ru: "Лаппеэнранта", lat: "Lappeenranta" }
+    - { ru: "Хямеэнлинна", lat: "Hameenlinna" }
+    - { ru: "Вааса", lat: "Vaasa" }
+    - { ru: "Сейняйоки", lat: "Seinajoki" }
+    - { ru: "Рованиеми", lat: "Rovaniemi" }
+    - { ru: "Миккели", lat: "Mikkeli" }
+    - { ru: "Котка", lat: "Kotka" }
+    - { ru: "Брюгге", lat: "Bruges" }
+    - { ru: "Намюр", lat: "Namur" }
+    - { ru: "Лёвен", lat: "Leuven" }
+    - { ru: "Шарлеруа", lat: "Charleroi" }
+    - { ru: "Льеж", lat: "Liege" }
+    - { ru: "Монс", lat: "Mons" }
+    - { ru: "Алст", lat: "Aalst" }
+    - { ru: "Мехелен", lat: "Mechelen" }
+    - { ru: "Ла-Лувьер", lat: "La Louviere" }
+    - { ru: "Синт-Никлас", lat: "Sint-Niklaas" }
+    - { ru: "Кортрейк", lat: "Kortrijk" }
+    - { ru: "Хасселт", lat: "Hasselt" }
+    - { ru: "Остенде", lat: "Ostend" }
+    - { ru: "Турне", lat: "Tournai" }
+    - { ru: "Генк", lat: "Genk" }
+    - { ru: "Серен", lat: "Seraing" }
+    - { ru: "Русселаре", lat: "Roeselare" }
+    - { ru: "Мускрон", lat: "Mouscron" }
+    - { ru: "Вервье", lat: "Verviers" }
+    - { ru: "Тирасполь", lat: "Tiraspol" }
+    - { ru: "Бэлць", lat: "Balti" }
+    - { ru: "Бендеры", lat: "Bender" }
+    - { ru: "Женева", lat: "Geneva" }
+    - { ru: "Базель", lat: "Basel" }
+    - { ru: "Берн", lat: "Bern" }
+    - { ru: "Лозанна", lat: "Lausanne" }
+    - { ru: "Винтертур", lat: "Winterthur" }
+    - { ru: "Люцерн", lat: "Lucerne" }
+    - { ru: "Санкт-Галлен", lat: "St. Gallen" }
+    - { ru: "Лугано", lat: "Lugano" }
+    - { ru: "Биль", lat: "Biel/Bienne" }
+    - { ru: "Тун", lat: "Thun" }
+    - { ru: "Ла-Шо-де-Фон", lat: "La Chaux-de-Fonds" }
+    - { ru: "Шаффхаузен", lat: "Schaffhausen" }
+    - { ru: "Фрибур", lat: "Fribourg" }
+    - { ru: "Грац", lat: "Graz" }
+    - { ru: "Линц", lat: "Linz" }
+    - { ru: "Зальцбург", lat: "Salzburg" }
+    - { ru: "Инсбрук", lat: "Innsbruck" }
+    - { ru: "Клагенфурт", lat: "Klagenfurt" }
+    - { ru: "Филлах", lat: "Villach" }
+    - { ru: "Вельс", lat: "Wels" }
+    - { ru: "Санкт-Пёльтен", lat: "Sankt Polten" }
+    - { ru: "Боттроп", lat: "Bottrop" }
+    - { ru: "Реклингхаузен", lat: "Recklinghausen" }
+    - { ru: "Хайльбронн", lat: "Heilbronn" }
+    - { ru: "Ульм", lat: "Ulm" }
+    - { ru: "Пфорцхайм", lat: "Pforzheim" }
+    - { ru: "Оффенбах", lat: "Offenbach" }
+    - { ru: "Бремерхафен", lat: "Bremerhaven" }
+    - { ru: "Фюрт", lat: "Furth" }
+    - { ru: "Ремшайд", lat: "Remscheid" }
+    - { ru: "Мёрс", lat: "Moers" }
+    - { ru: "Кобленц", lat: "Koblenz" }
+    - { ru: "Бергиш-Гладбах", lat: "Bergisch Gladbach" }
+    - { ru: "Ройтлинген", lat: "Reutlingen" }
+    - { ru: "Трир", lat: "Trier" }
+    - { ru: "Эрланген", lat: "Erlangen" }
+    - { ru: "Йена", lat: "Jena" }
+    - { ru: "Зальцгиттер", lat: "Salzgitter" }
+    - { ru: "Гютерсло", lat: "Gutersloh" }
+    - { ru: "Зиген", lat: "Siegen" }
+    - { ru: "Хильдесхайм", lat: "Hildesheim" }
+    - { ru: "Кайзерслаутерн", lat: "Kaiserslautern" }
+    - { ru: "Котбус", lat: "Cottbus" }
+    - { ru: "Цвиккау", lat: "Zwickau" }
+    - { ru: "Шверин", lat: "Schwerin" }
+    - { ru: "Изерлон", lat: "Iserlohn" }
+    - { ru: "Виттен", lat: "Witten" }
+    - { ru: "Люнен", lat: "Lunen" }
+    - { ru: "Гера", lat: "Gera" }
+    - { ru: "Дюрен", lat: "Duren" }
+    - { ru: "Марл", lat: "Marl" }
+    - { ru: "Фленсбург", lat: "Flensburg" }
+    - { ru: "Ратинген", lat: "Ratingen" }
+    - { ru: "Вормс", lat: "Worms" }
+    - { ru: "Дессау", lat: "Dessau" }
+    - { ru: "Нойс", lat: "Neuss" }
+    - { ru: "Фельберт", lat: "Velbert" }
+    - { ru: "Людвигсбург", lat: "Ludwigsburg" }
+    - { ru: "Ашаффенбург", lat: "Aschaffenburg" }
+    - { ru: "Байройт", lat: "Bayreuth" }
+    - { ru: "Бамберг", lat: "Bamberg" }
+    - { ru: "Кемптен", lat: "Kempten" }
+    - { ru: "Баден-Баден", lat: "Baden-Baden" }
+    - { ru: "Зиндельфинген", lat: "Sindelfingen" }
+    - { ru: "Эсслинген", lat: "Esslingen" }
+    - { ru: "Гёппинген", lat: "Goppingen" }
+    - { ru: "Констанц", lat: "Konstanz" }
+    - { ru: "Веймар", lat: "Weimar" }
+    - { ru: "Розенхайм", lat: "Rosenheim" }
+    - { ru: "Вильгельмсхафен", lat: "Wilhelmshaven" }
+    - { ru: "Дельменхорст", lat: "Delmenhorst" }
+    - { ru: "Ханау", lat: "Hanau" }
+    - { ru: "Оффенбург", lat: "Offenburg" }
+    - { ru: "Фридрихсхафен", lat: "Friedrichshafen" }
+    - { ru: "Виллинген-Швеннинген", lat: "Villingen-Schwenningen" }
+    - { ru: "Швебиш-Гмюнд", lat: "Schwabisch Gmund" }
+    - { ru: "Хайденхайм", lat: "Heidenheim" }
+    - { ru: "Хамельн", lat: "Hameln" }
+    - { ru: "Сарагоса", lat: "Zaragoza" }
+    - { ru: "Малага", lat: "Malaga" }
+    - { ru: "Мурсия", lat: "Murcia" }
+    - { ru: "Бильбао", lat: "Bilbao" }
+    - { ru: "Аликанте", lat: "Alicante" }
+    - { ru: "Кордова", lat: "Cordoba" }
+    - { ru: "Вальядолид", lat: "Valladolid" }
+    - { ru: "Виго", lat: "Vigo" }
+    - { ru: "Хихон", lat: "Gijon" }
+    - { ru: "Л'Оспиталет-де-Льобрегат", lat: "L'Hospitalet de Llobregat" }
+    - { ru: "Ла-Корунья", lat: "A Coruna" }
+    - { ru: "Витория-Гастейс", lat: "Vitoria-Gasteiz" }
+    - { ru: "Гранада", lat: "Granada" }
+    - { ru: "Эльче", lat: "Elche" }
+    - { ru: "Овьедо", lat: "Oviedo" }
+    - { ru: "Бадалона", lat: "Badalona" }
+    - { ru: "Картахена", lat: "Cartagena" }
+    - { ru: "Террасса", lat: "Terrassa" }
+    - { ru: "Херес-де-ла-Фронтера", lat: "Jerez de la Frontera" }
+    - { ru: "Сабадель", lat: "Sabadell" }
+    - { ru: "Мостолес", lat: "Mostoles" }
+    - { ru: "Алькала-де-Энарес", lat: "Alcala de Henares" }
+    - { ru: "Памплона", lat: "Pamplona" }
+    - { ru: "Фуэнлабрада", lat: "Fuenlabrada" }
+    - { ru: "Альмерия", lat: "Almeria" }
+    - { ru: "Леганес", lat: "Leganes" }
+    - { ru: "Сан-Себастьян", lat: "Donostia-San Sebastian" }
+    - { ru: "Сантандер", lat: "Santander" }
+    - { ru: "Кастельон-де-ла-Плана", lat: "Castellon de la Plana" }
+    - { ru: "Бургос", lat: "Burgos" }
+    - { ru: "Алькоркон", lat: "Alcorcon" }
+    - { ru: "Альбасете", lat: "Albacete" }
+    - { ru: "Хетафе", lat: "Getafe" }
+    - { ru: "Саламанка", lat: "Salamanca" }
+    - { ru: "Уэльва", lat: "Huelva" }
+    - { ru: "Логроньо", lat: "Logrono" }
+    - { ru: "Бадахос", lat: "Badajoz" }
+    - { ru: "Таррагона", lat: "Tarragona" }
+    - { ru: "Леон", lat: "Leon" }
+    - { ru: "Кадис", lat: "Cadiz" }
+    - { ru: "Марбелья", lat: "Marbella" }
+    - { ru: "Дос-Эрманас", lat: "Dos Hermanas" }
+    - { ru: "Матаро", lat: "Mataro" }
+    - { ru: "Торревьеха", lat: "Torrevieja" }
+    - { ru: "Парла", lat: "Parla" }
+    - { ru: "Алькобендас", lat: "Alcobendas" }
+    - { ru: "Хаэн", lat: "Jaen" }
+    - { ru: "Лерида", lat: "Lleida" }
+    - { ru: "Торрехон-де-Ардос", lat: "Torrejon de Ardoz" }
+    - { ru: "Санта-Колома-де-Граменет", lat: "Santa Coloma de Gramenet" }
+    - { ru: "Реус", lat: "Reus" }
+    - { ru: "Альхесирас", lat: "Algeciras" }
+    - { ru: "Оренсе", lat: "Ourense" }
+    - { ru: "Корнелья-де-Льобрегат", lat: "Cornella de Llobregat" }
+    - { ru: "Алькала-де-Гвадаира", lat: "Alcala de Guadaira" }
+    - { ru: "Баракальдо", lat: "Barakaldo" }
+    - { ru: "Посуэло-де-Аларкон", lat: "Pozuelo de Alarcon" }
+    - { ru: "Жирона", lat: "Girona" }
+    - { ru: "Луго", lat: "Lugo" }
+    - { ru: "Лас-Росас", lat: "Las Rozas" }
+    - { ru: "Эль-Пуэрто-де-Санта-Мария", lat: "El Puerto de Santa Maria" }
+    - { ru: "Авилес", lat: "Aviles" }
+    - { ru: "Сан-Фернандо (Испания)", lat: "San Fernando (Spain)" }
+    - { ru: "Кослада", lat: "Coslada" }
+    - { ru: "Паленсия", lat: "Palencia" }
+    - { ru: "Лорка", lat: "Lorca" }
+    - { ru: "Понтеведра", lat: "Pontevedra" }
+    - { ru: "Махадаонда", lat: "Majadahonda" }
+    - { ru: "Манреса", lat: "Manresa" }
+    - { ru: "Самора", lat: "Zamora" }
+    - { ru: "Фуэнхирола", lat: "Fuengirola" }
+    - { ru: "Торремолинос", lat: "Torremolinos" }
+    - { ru: "Рокетас-де-Мар", lat: "Roquetas de Mar" }
+    - { ru: "Ла-Линеа", lat: "La Linea de la Concepcion" }
+    - { ru: "Чиклана", lat: "Chiclana de la Frontera" }
+    - { ru: "Ориуэла", lat: "Orihuela" }
+    - { ru: "Бенидорм", lat: "Benidorm" }
+    - { ru: "Велес-Малага", lat: "Velez-Malaga" }
+    - { ru: "Торрент (Испания)", lat: "Torrent (Spain)" }
+    - { ru: "Гандия", lat: "Gandia" }
+    - { ru: "Санлукар-де-Баррамеда", lat: "Sanlucar de Barrameda" }
+    - { ru: "Сеговия", lat: "Segovia" }
+    - { ru: "Толедо", lat: "Toledo" }
+    - { ru: "Гвадалахара (Испания)", lat: "Guadalajara (Spain)" }
+    - { ru: "Куэнка", lat: "Cuenca" }
+    - { ru: "Сьюдад-Реаль", lat: "Ciudad Real" }
+    - { ru: "Понферрада", lat: "Ponferrada" }
+    - { ru: "Линарес", lat: "Linares" }
+    - { ru: "Мерида (Испания)", lat: "Merida (Spain)" }
+    - { ru: "Талавера-де-ла-Рейна", lat: "Talavera de la Reina" }
+    - { ru: "Эльда", lat: "Elda" }
+    - { ru: "Равенна", lat: "Ravenna" }
+    - { ru: "Фоджа", lat: "Foggia" }
+    - { ru: "Римини", lat: "Rimini" }
+    - { ru: "Салерно", lat: "Salerno" }
+    - { ru: "Бергамо", lat: "Bergamo" }
+    - { ru: "Тренто", lat: "Trento" }
+    - { ru: "Виченца", lat: "Vicenza" }
+    - { ru: "Больцано", lat: "Bolzano" }
+    - { ru: "Андрия", lat: "Andria" }
+    - { ru: "Латина", lat: "Latina" }
+    - { ru: "Джульяно", lat: "Giugliano" }
+    - { ru: "Чезена", lat: "Cesena" }
+    - { ru: "Специя", lat: "La Spezia" }
+    - { ru: "Сассари", lat: "Sassari" }
+    - { ru: "Сиракуза", lat: "Syracuse" }
+    - { ru: "Пескара", lat: "Pescara" }
+    - { ru: "Монца", lat: "Monza" }
+    - { ru: "Лечче", lat: "Lecce" }
+    - { ru: "Новара", lat: "Novara" }
+    - { ru: "Пьяченца", lat: "Piacenza" }
+    - { ru: "Катандзаро", lat: "Catanzaro" }
+    - { ru: "Анкона", lat: "Ancona" }
+    - { ru: "Удине", lat: "Udine" }
+    - { ru: "Барлетта", lat: "Barletta" }
+    - { ru: "Ареццо", lat: "Arezzo" }
+    - { ru: "Комо", lat: "Como" }
+    - { ru: "Форли", lat: "Forli" }
+    - { ru: "Алессандрия", lat: "Alessandria" }
+    - { ru: "Терни", lat: "Terni" }
+    - { ru: "Пистоя", lat: "Pistoia" }
+    - { ru: "Торре-дель-Греко", lat: "Torre del Greco" }
+    - { ru: "Козенца", lat: "Cosenza" }
+    - { ru: "Пиза", lat: "Pisa" }
+    - { ru: "Бриндизи", lat: "Brindisi" }
+    - { ru: "Казерта", lat: "Caserta" }
+    - { ru: "Лукка", lat: "Lucca" }
+    - { ru: "Варезе", lat: "Varese" }
+    - { ru: "Марсала", lat: "Marsala" }
+    - { ru: "Рагуза (Италия)", lat: "Ragusa (Italy)" }
+    - { ru: "Асти", lat: "Asti" }
+    - { ru: "Кремона", lat: "Cremona" }
+    - { ru: "Бусто-Арсицио", lat: "Busto Arsizio" }
+    - { ru: "Карпи", lat: "Carpi" }
+    - { ru: "Кварту-Сант-Элена", lat: "Quartu Sant'Elena" }
+    - { ru: "Агридженто", lat: "Agrigento" }
+    - { ru: "Гела", lat: "Gela" }
+    - { ru: "Мольфетта", lat: "Molfetta" }
+    - { ru: "Трапани", lat: "Trapani" }
+    - { ru: "Мантуя", lat: "Mantova" }
+    - { ru: "Чинизелло-Бальсамо", lat: "Cinisello Balsamo" }
+    - { ru: "Сесто-Сан-Джованни", lat: "Sesto San Giovanni" }
+    - { ru: "Л'Акуила", lat: "L'Aquila" }
+    - { ru: "Потенца", lat: "Potenza" }
+    - { ru: "Фьюмичино", lat: "Fiumicino" }
+    - { ru: "Тревизо", lat: "Treviso" }
+    - { ru: "Гроссето", lat: "Grosseto" }
+    - { ru: "Савона", lat: "Savona" }
+    - { ru: "Альтамура", lat: "Altamura" }
+    - { ru: "Витториа", lat: "Vittoria" }
+    - { ru: "Руда-Слёнска", lat: "Ruda Slaska" }
+    - { ru: "Рыбник", lat: "Rybnik" }
+    - { ru: "Тыхы", lat: "Tychy" }
+    - { ru: "Ополе", lat: "Opole" }
+    - { ru: "Гожув-Велькопольски", lat: "Gorzow Wielkopolski" }
+    - { ru: "Домброва-Гурнича", lat: "Dabrowa Gornicza" }
+    - { ru: "Эльблонг", lat: "Elblag" }
+    - { ru: "Вальбжих", lat: "Walbrzych" }
+    - { ru: "Зелена-Гура", lat: "Zielona Gora" }
+    - { ru: "Влоцлавек", lat: "Wloclawek" }
+    - { ru: "Тарнув", lat: "Tarnow" }
+    - { ru: "Плоцк", lat: "Plock" }
+    - { ru: "Хожув", lat: "Chorzow" }
+    - { ru: "Калиш", lat: "Kalisz" }
+    - { ru: "Легница", lat: "Legnica" }
+    - { ru: "Грудзёндз", lat: "Grudziadz" }
+    - { ru: "Слупск", lat: "Slupsk" }
+    - { ru: "Яворжно", lat: "Jaworzno" }
+    - { ru: "Новы-Сонч", lat: "Nowy Sacz" }
+    - { ru: "Ястшемье-Здруй", lat: "Jastrzebie-Zdroj" }
+    - { ru: "Еленя-Гура", lat: "Jelenia Gora" }
+    - { ru: "Конин", lat: "Konin" }
+    - { ru: "Седльце", lat: "Siedlce" }
+    - { ru: "Пётркув-Трыбунальски", lat: "Piotrkow Trybunalski" }
+    - { ru: "Лешно", lat: "Leszno" }
+    - { ru: "Иновроцлав", lat: "Inowroclaw" }
+    - { ru: "Любин", lat: "Lubin" }
+    - { ru: "Острув-Велькопольски", lat: "Ostrow Wielkopolski" }
+    - { ru: "Сталёва-Воля", lat: "Stalowa Wola" }
+    - { ru: "Гнезно", lat: "Gniezno" }
+    - { ru: "Старгард", lat: "Stargard" }
+    - { ru: "Кошалин", lat: "Koszalin" }
+    - { ru: "Сувалки", lat: "Suwalki" }
+    - { ru: "Замосць", lat: "Zamosc" }
+    - { ru: "Пшемысль", lat: "Przemysl" }
+    - { ru: "Мелец", lat: "Mielec" }
+    - { ru: "Пабяницe", lat: "Pabianice" }
+    - { ru: "Свидница", lat: "Swidnica" }
+    - { ru: "Острулэнка", lat: "Ostroleka" }
+    - { ru: "Бяла-Подляска", lat: "Biala Podlaska" }
+    - { ru: "Семяновице-Слёнске", lat: "Siemianowice Slaskie" }
+    - { ru: "Жоры", lat: "Zory" }
+    - { ru: "Пекары-Слёнске", lat: "Piekary Slaskie" }
+    - { ru: "Томашув-Мазовецки", lat: "Tomaszow Mazowiecki" }
+    - { ru: "Кендзежин-Козле", lat: "Kedzierzyn-Kozle" }
+    - { ru: "Глогув", lat: "Glogow" }
+    - { ru: "Белхатув", lat: "Belchatow" }
+    - { ru: "Тчев", lat: "Tczew" }
+    - { ru: "Хелм", lat: "Chelm" }
+    - { ru: "Ломжа", lat: "Lomza" }
+    - { ru: "Водзислав-Слёнски", lat: "Wodzislaw Slaski" }
+    - { ru: "Дробета-Турну-Северин", lat: "Drobeta-Turnu Severin" }
+    - { ru: "Сучава", lat: "Suceava" }
+    - { ru: "Тыргу-Муреш", lat: "Targu Mures" }
+    - { ru: "Пятра-Нямц", lat: "Piatra Neamt" }
+    - { ru: "Тырговиште", lat: "Targoviste" }
+    - { ru: "Дева (Румыния)", lat: "Deva (Romania)" }
+    - { ru: "Фокшань", lat: "Focsani" }
+    - { ru: "Решица", lat: "Resita" }
+    - { ru: "Тулча", lat: "Tulcea" }
+    - { ru: "Александрия (Румыния)", lat: "Alexandria (Romania)" }
+    - { ru: "Сфынту-Георге", lat: "Sfantu Gheorghe" }
+    - { ru: "Алба-Юлия", lat: "Alba Iulia" }
+    - { ru: "Залэу", lat: "Zalau" }
+    - { ru: "Бистрица", lat: "Bistrita" }
+    - { ru: "Хунедоара", lat: "Hunedoara" }
+    - { ru: "Роман (Румыния)", lat: "Roman (Romania)" }
+    - { ru: "Брэила", lat: "Braila" }
+    - { ru: "Дуррес", lat: "Durres" }
+    - { ru: "Влёра", lat: "Vlore" }
+    - { ru: "Эльбасан", lat: "Elbasan" }
+    - { ru: "Шкодер", lat: "Shkoder" }
+    - { ru: "Фиер", lat: "Fier" }
+    - { ru: "Корча", lat: "Korce" }
+    - { ru: "Берат", lat: "Berat" }
+    - { ru: "Гюмри", lat: "Gyumri" }
+    - { ru: "Ванадзор", lat: "Vanadzor" }
+    - { ru: "Гянджа", lat: "Ganja" }
+    - { ru: "Сумгайыт", lat: "Sumgayit" }
+    - { ru: "Нахчыван", lat: "Nakhchivan" }
+    - { ru: "Мингячевир", lat: "Mingachevir" }
+    - { ru: "Пинск", lat: "Pinsk" }
+    - { ru: "Орша", lat: "Orsha" }
+    - { ru: "Мозырь", lat: "Mozyr" }
+    - { ru: "Лида", lat: "Lida" }
+    - { ru: "Новополоцк", lat: "Novopolotsk" }
+    - { ru: "Солигорск", lat: "Soligorsk" }
+    - { ru: "Молодечно", lat: "Molodechno" }
+    - { ru: "Жлобин", lat: "Zhlobin" }
+    - { ru: "Полоцк", lat: "Polotsk" }
+    - { ru: "Мостар", lat: "Mostar" }
+    - { ru: "Биелина", lat: "Bijeljina" }
+    - { ru: "Брчко", lat: "Brcko" }
+    - { ru: "Пловдив", lat: "Plovdiv" }
+    - { ru: "Варна", lat: "Varna" }
+    - { ru: "Бургас", lat: "Burgas" }
+    - { ru: "Русе", lat: "Ruse" }
+    - { ru: "Стара-Загора", lat: "Stara Zagora" }
+    - { ru: "Плевен", lat: "Pleven" }
+    - { ru: "Сливен", lat: "Sliven" }
+    - { ru: "Добрич", lat: "Dobrich" }
+    - { ru: "Шумен", lat: "Shumen" }
+    - { ru: "Перник", lat: "Pernik" }
+    - { ru: "Хасково", lat: "Haskovo" }
+    - { ru: "Ямбол", lat: "Yambol" }
+    - { ru: "Пазарджик", lat: "Pazardzhik" }
+    - { ru: "Благоевград", lat: "Blagoevgrad" }
+    - { ru: "Велико-Тырново", lat: "Veliko Tarnovo" }
+    - { ru: "Враца", lat: "Vratsa" }
+    - { ru: "Габрово", lat: "Gabrovo" }
+    - { ru: "Монтана (Болгария)", lat: "Montana (Bulgaria)" }
+    - { ru: "Видин", lat: "Vidin" }
+    - { ru: "Сплит", lat: "Split" }
+    - { ru: "Риека", lat: "Rijeka" }
+    - { ru: "Осиек", lat: "Osijek" }
+    - { ru: "Задар", lat: "Zadar" }
+    - { ru: "Славонски-Брод", lat: "Slavonski Brod" }
+    - { ru: "Пула", lat: "Pula" }
+    - { ru: "Карловац", lat: "Karlovac" }
+    - { ru: "Вараждин", lat: "Varazdin" }
+    - { ru: "Шибеник", lat: "Sibenik" }
+    - { ru: "Сисак", lat: "Sisak" }
+    - { ru: "Брно", lat: "Brno" }
+    - { ru: "Острава", lat: "Ostrava" }
+    - { ru: "Пльзень", lat: "Plzen" }
+    - { ru: "Либерец", lat: "Liberec" }
+    - { ru: "Оломоуц", lat: "Olomouc" }
+    - { ru: "Ческе-Будеёвице", lat: "Ceske Budejovice" }
+    - { ru: "Градец-Кралове", lat: "Hradec Kralove" }
+    - { ru: "Усти-над-Лабем", lat: "Usti nad Labem" }
+    - { ru: "Пардубице", lat: "Pardubice" }
+    - { ru: "Злин", lat: "Zlin" }
+    - { ru: "Гавиржов", lat: "Havirov" }
+    - { ru: "Кладно", lat: "Kladno" }
+    - { ru: "Мост (Чехия)", lat: "Most (Czech Republic)" }
+    - { ru: "Опава", lat: "Opava" }
+    - { ru: "Фридек-Мистек", lat: "Frydek-Mistek" }
+    - { ru: "Карвина", lat: "Karvina" }
+    - { ru: "Йиглава", lat: "Jihlava" }
+    - { ru: "Теплице", lat: "Teplice" }
+    - { ru: "Млада-Болеслав", lat: "Mlada Boleslav" }
+    - { ru: "Простеёв", lat: "Prostejov" }
+    - { ru: "Пршеров", lat: "Prerov" }
+    - { ru: "Дечин", lat: "Decin" }
+    - { ru: "Копенгаген", lat: "Copenhagen" }
+    - { ru: "Орхус", lat: "Aarhus" }
+    - { ru: "Оденсе", lat: "Odense" }
+    - { ru: "Ольборг", lat: "Aalborg" }
+    - { ru: "Эсбьерг", lat: "Esbjerg" }
+    - { ru: "Рандерс", lat: "Randers" }
+    - { ru: "Кольдинг", lat: "Kolding" }
+    - { ru: "Хорсенс", lat: "Horsens" }
+    - { ru: "Вейле", lat: "Vejle" }
+    - { ru: "Роскилле", lat: "Roskilde" }
+    - { ru: "Силькеборг", lat: "Silkeborg" }
+    - { ru: "Хернинг", lat: "Herning" }
+    - { ru: "Фредерисия", lat: "Fredericia" }
+    - { ru: "Хельсингёр", lat: "Helsingor" }
+    - { ru: "Нэствед", lat: "Naestved" }
+    - { ru: "Тарту", lat: "Tartu" }
+    - { ru: "Нарва", lat: "Narva" }
+    - { ru: "Пярну", lat: "Parnu" }
+    - { ru: "Кутаиси", lat: "Kutaisi" }
+    - { ru: "Батуми", lat: "Batumi" }
+    - { ru: "Рустави", lat: "Rustavi" }
+    - { ru: "Гори", lat: "Gori" }
+    - { ru: "Зугдиди", lat: "Zugdidi" }
+    - { ru: "Патры", lat: "Patras" }
+    - { ru: "Лариса", lat: "Larissa" }
+    - { ru: "Волос", lat: "Volos" }
+    - { ru: "Янина", lat: "Ioannina" }
+    - { ru: "Трикала", lat: "Trikala" }
+    - { ru: "Халкида", lat: "Chalkida" }
+    - { ru: "Кавала", lat: "Kavala" }
+    - { ru: "Серрес", lat: "Serres" }
+    - { ru: "Александруполис", lat: "Alexandroupoli" }
+    - { ru: "Ксанти", lat: "Xanthi" }
+    - { ru: "Каламата", lat: "Kalamata" }
+    - { ru: "Катерини", lat: "Katerini" }
+    - { ru: "Агринион", lat: "Agrinio" }
+    - { ru: "Кардица", lat: "Karditsa" }
+    - { ru: "Козани", lat: "Kozani" }
+    - { ru: "Драма", lat: "Drama" }
+    - { ru: "Ламия", lat: "Lamia" }
+    - { ru: "Комотини", lat: "Komotini" }
+    - { ru: "Дебрецен", lat: "Debrecen" }
+    - { ru: "Мишкольц", lat: "Miskolc" }
+    - { ru: "Сегед", lat: "Szeged" }
+    - { ru: "Печ", lat: "Pecs" }
+    - { ru: "Дьёр", lat: "Gyor" }
+    - { ru: "Ньиредьхаза", lat: "Nyiregyhaza" }
+    - { ru: "Кечкемет", lat: "Kecskemet" }
+    - { ru: "Секешфехервар", lat: "Szekesfehervar" }
+    - { ru: "Сомбатхей", lat: "Szombathely" }
+    - { ru: "Сольнок", lat: "Szolnok" }
+    - { ru: "Эрд", lat: "Erd" }
+    - { ru: "Татабанья", lat: "Tatabanya" }
+    - { ru: "Капошвар", lat: "Kaposvar" }
+    - { ru: "Веспрем", lat: "Veszprem" }
+    - { ru: "Залаэгерсег", lat: "Zalaegerszeg" }
+    - { ru: "Шопрон", lat: "Sopron" }
+    - { ru: "Эгер", lat: "Eger" }
+    - { ru: "Дунайварош", lat: "Dunaujvaros" }
+    - { ru: "Ходмезёвашархей", lat: "Hodmezovasarhely" }
+    - { ru: "Бекешчаба", lat: "Bekescsaba" }
+    - { ru: "Приштина", lat: "Pristina" }
+    - { ru: "Призрен", lat: "Prizren" }
+    - { ru: "Феризай", lat: "Ferizaj" }
+    - { ru: "Печ (Косово)", lat: "Peja" }
+    - { ru: "Джяковица", lat: "Gjakova" }
+    - { ru: "Гниляне", lat: "Gjilan" }
+    - { ru: "Митровица", lat: "Mitrovica" }
+    - { ru: "Даугавпилс", lat: "Daugavpils" }
+    - { ru: "Лиепая", lat: "Liepaja" }
+    - { ru: "Елгава", lat: "Jelgava" }
+    - { ru: "Юрмала", lat: "Jurmala" }
+    - { ru: "Вентспилс", lat: "Ventspils" }
+    - { ru: "Клайпеда", lat: "Klaipeda" }
+    - { ru: "Шяуляй", lat: "Siauliai" }
+    - { ru: "Паневежис", lat: "Panevezys" }
+    - { ru: "Алитус", lat: "Alytus" }
+    - { ru: "Мариямполе", lat: "Marijampole" }
+    - { ru: "Люксембург", lat: "Luxembourg City" }
+    - { ru: "Эш-сюр-Альзет", lat: "Esch-sur-Alzette" }
+    - { ru: "Подгорица", lat: "Podgorica" }
+    - { ru: "Никшич", lat: "Niksic" }
+    - { ru: "Зандам", lat: "Zaandam" }
+    - { ru: "Хертогенбос", lat: "'s-Hertogenbosch" }
+    - { ru: "Дордрехт", lat: "Dordrecht" }
+    - { ru: "Лейден", lat: "Leiden" }
+    - { ru: "Зутермер", lat: "Zoetermeer" }
+    - { ru: "Зволле", lat: "Zwolle" }
+    - { ru: "Девентер", lat: "Deventer" }
+    - { ru: "Маастрихт", lat: "Maastricht" }
+    - { ru: "Эде", lat: "Ede" }
+    - { ru: "Делфт", lat: "Delft" }
+    - { ru: "Алкмар", lat: "Alkmaar" }
+    - { ru: "Венло", lat: "Venlo" }
+    - { ru: "Леуварден", lat: "Leeuwarden" }
+    - { ru: "Ситтард-Гелен", lat: "Sittard-Geleen" }
+    - { ru: "Эммен", lat: "Emmen" }
+    - { ru: "Хелмонд", lat: "Helmond" }
+    - { ru: "Херлен", lat: "Heerlen" }
+    - { ru: "Осс", lat: "Oss" }
+    - { ru: "Пюрмеренд", lat: "Purmerend" }
+    - { ru: "Рузендал", lat: "Roosendaal" }
+    - { ru: "Схидам", lat: "Schiedam" }
+    - { ru: "Алмело", lat: "Almelo" }
+    - { ru: "Хорн", lat: "Hoorn" }
+    - { ru: "Алфен-ан-ден-Рейн", lat: "Alphen aan den Rijn" }
+    - { ru: "Лелистад", lat: "Lelystad" }
+    - { ru: "Гауда", lat: "Gouda" }
+    - { ru: "Хенгело", lat: "Hengelo" }
+    - { ru: "Нисевард", lat: "Nissewaard" }
+    - { ru: "Велсен", lat: "Velsen" }
+    - { ru: "Битола", lat: "Bitola" }
+    - { ru: "Куманово", lat: "Kumanovo" }
+    - { ru: "Тетово", lat: "Tetovo" }
+    - { ru: "Гостивар", lat: "Gostivar" }
+    - { ru: "Струмица", lat: "Strumica" }
+    - { ru: "Берген", lat: "Bergen" }
+    - { ru: "Ставангер", lat: "Stavanger" }
+    - { ru: "Тронхейм", lat: "Trondheim" }
+    - { ru: "Драммен", lat: "Drammen" }
+    - { ru: "Фредрикстад", lat: "Fredrikstad" }
+    - { ru: "Кристиансанн", lat: "Kristiansand" }
+    - { ru: "Сандес", lat: "Sandnes" }
+    - { ru: "Тромсё", lat: "Tromso" }
+    - { ru: "Сарпсборг", lat: "Sarpsborg" }
+    - { ru: "Шиен", lat: "Skien" }
+    - { ru: "Олесунн", lat: "Alesund" }
+    - { ru: "Сандефьорд", lat: "Sandefjord" }
+    - { ru: "Хаугесунн", lat: "Haugesund" }
+    - { ru: "Тёнсберг", lat: "Tonsberg" }
+    - { ru: "Мосс (Норвегия)", lat: "Moss (Norway)" }
+    - { ru: "Будё", lat: "Bodo" }
+    - { ru: "Коимбра", lat: "Coimbra" }
+    - { ru: "Сетубал", lat: "Setubal" }
+    - { ru: "Алмада", lat: "Almada" }
+    - { ru: "Одивелаш", lat: "Odivelas" }
+    - { ru: "Визеу", lat: "Viseu" }
+    - { ru: "Эвора", lat: "Evora" }
+    - { ru: "Фару", lat: "Faro" }
+    - { ru: "Кашкайш", lat: "Cascais" }
+    - { ru: "Гимарайнш", lat: "Guimaraes" }
+    - { ru: "Авейру", lat: "Aveiro" }
+    - { ru: "Матозиньюш", lat: "Matosinhos" }
+    - { ru: "Гондомар", lat: "Gondomar" }
+    - { ru: "Лоуреш", lat: "Loures" }
+    - { ru: "Майа", lat: "Maia" }
+    - { ru: "Сейшал", lat: "Seixal" }
+    - { ru: "Оэйраш", lat: "Oeiras" }
+    - { ru: "Баррейру", lat: "Barreiro" }
+    - { ru: "Мойта", lat: "Moita" }
+    - { ru: "Повоа-де-Варзин", lat: "Povoa de Varzim" }
+    - { ru: "Вила-ду-Конди", lat: "Vila do Conde" }
+    - { ru: "Ковильян", lat: "Covilha" }
+    - { ru: "Зренянин", lat: "Zrenjanin" }
+    - { ru: "Панчево", lat: "Pancevo" }
+    - { ru: "Чачак", lat: "Cacak" }
+    - { ru: "Нови-Пазар", lat: "Novi Pazar" }
+    - { ru: "Смедерево", lat: "Smederevo" }
+    - { ru: "Лесковац", lat: "Leskovac" }
+    - { ru: "Валево", lat: "Valjevo" }
+    - { ru: "Вранье", lat: "Vranje" }
+    - { ru: "Крушевац", lat: "Krusevac" }
+    - { ru: "Шабац", lat: "Sabac" }
+    - { ru: "Кралево", lat: "Kraljevo" }
+    - { ru: "Кошице", lat: "Kosice" }
+    - { ru: "Прешов", lat: "Presov" }
+    - { ru: "Жилина", lat: "Zilina" }
+    - { ru: "Банска-Бистрица", lat: "Banska Bystrica" }
+    - { ru: "Нитра", lat: "Nitra" }
+    - { ru: "Трнава", lat: "Trnava" }
+    - { ru: "Мартин (Словакия)", lat: "Martin (Slovakia)" }
+    - { ru: "Тренчин", lat: "Trencin" }
+    - { ru: "Попрад", lat: "Poprad" }
+    - { ru: "Крань", lat: "Kranj" }
+    - { ru: "Копер", lat: "Koper" }
+    - { ru: "Целе", lat: "Celje" }
+    - { ru: "Вестерос", lat: "Vasteras" }
+    - { ru: "Эребру", lat: "Orebro" }
+    - { ru: "Линчёпинг", lat: "Linkoping" }
+    - { ru: "Хельсингборг", lat: "Helsingborg" }
+    - { ru: "Йёнчёпинг", lat: "Jonkoping" }
+    - { ru: "Норрчёпинг", lat: "Norrkoping" }
+    - { ru: "Лунд", lat: "Lund" }
+    - { ru: "Умео", lat: "Umea" }
+    - { ru: "Евле", lat: "Gavle" }
+    - { ru: "Бурос", lat: "Boras" }
+    - { ru: "Эскильстуна", lat: "Eskilstuna" }
+    - { ru: "Сёдертелье", lat: "Sodertalje" }
+    - { ru: "Карлстад", lat: "Karlstad" }
+    - { ru: "Векшё", lat: "Vaxjo" }
+    - { ru: "Хальмстад", lat: "Halmstad" }
+    - { ru: "Сундсвалль", lat: "Sundsvall" }
+    - { ru: "Лулео", lat: "Lulea" }
+    - { ru: "Худдинге", lat: "Huddinge" }
+    - { ru: "Накка", lat: "Nacka" }
+    - { ru: "Ерфелла", lat: "Jarfalla" }
+    - { ru: "Солентуна", lat: "Sollentuna" }
+    - { ru: "Ханинге", lat: "Haninge" }
+    - { ru: "Ботчюрка", lat: "Botkyrka" }
+    - { ru: "Эстерсунд", lat: "Ostersund" }
+    - { ru: "Шеллефтео", lat: "Skelleftea" }
+    - { ru: "Тролльхэттан", lat: "Trollhattan" }
+    - { ru: "Сундбюберг", lat: "Sundbyberg" }
+    - { ru: "Солна", lat: "Solna" }
+    - { ru: "Мёлндаль", lat: "Molndal" }
+    - { ru: "Фалун", lat: "Falun" }
+    - { ru: "Кристианстад", lat: "Kristianstad" }
+    - { ru: "Варберг", lat: "Varberg" }
+    - { ru: "Кальмар", lat: "Kalmar" }
+    - { ru: "Реймс", lat: "Reims" }
+    - { ru: "Гавр", lat: "Le Havre" }
+    - { ru: "Сент-Этьен", lat: "Saint-Etienne" }
+    - { ru: "Тулон", lat: "Toulon" }
+    - { ru: "Гренобль", lat: "Grenoble" }
+    - { ru: "Дижон", lat: "Dijon" }
+    - { ru: "Анже", lat: "Angers" }
+    - { ru: "Ним", lat: "Nimes" }
+    - { ru: "Вийёрбанн", lat: "Villeurbanne" }
+    - { ru: "Экс-ан-Прованс", lat: "Aix-en-Provence" }
+    - { ru: "Клермон-Ферран", lat: "Clermont-Ferrand" }
+    - { ru: "Ле-Ман", lat: "Le Mans" }
+    - { ru: "Брест (Франция)", lat: "Brest (France)" }
+    - { ru: "Тур", lat: "Tours" }
+    - { ru: "Амьен", lat: "Amiens" }
+    - { ru: "Лимож", lat: "Limoges" }
+    - { ru: "Аннси", lat: "Annecy" }
+    - { ru: "Перпиньян", lat: "Perpignan" }
+    - { ru: "Булонь-Бийанкур", lat: "Boulogne-Billancourt" }
+    - { ru: "Мец", lat: "Metz" }
+    - { ru: "Безансон", lat: "Besancon" }
+    - { ru: "Орлеан", lat: "Orleans" }
+    - { ru: "Аржантёй", lat: "Argenteuil" }
+    - { ru: "Мюлуз", lat: "Mulhouse" }
+    - { ru: "Руан", lat: "Rouen" }
+    - { ru: "Монтрёй", lat: "Montreuil" }
+    - { ru: "Кан", lat: "Caen" }
+    - { ru: "Нанси", lat: "Nancy" }
+    - { ru: "Рубе", lat: "Roubaix" }
+    - { ru: "Туркуэн", lat: "Tourcoing" }
+    - { ru: "Нантер", lat: "Nanterre" }
+    - { ru: "Витри-сюр-Сен", lat: "Vitry-sur-Seine" }
+    - { ru: "Кретёй", lat: "Creteil" }
+    - { ru: "Дюнкерк", lat: "Dunkerque" }
+    - { ru: "Авиньон", lat: "Avignon" }
+    - { ru: "Пуатье", lat: "Poitiers" }
+    - { ru: "Версаль", lat: "Versailles" }
+    - { ru: "По", lat: "Pau" }
+    - { ru: "Курбевуа", lat: "Courbevoie" }
+    - { ru: "Олне-су-Буа", lat: "Aulnay-sous-Bois" }
+    - { ru: "Коломб", lat: "Colombes" }
+    - { ru: "Сен-Дени", lat: "Saint-Denis" }
+    - { ru: "Шампиньи-сюр-Марн", lat: "Champigny-sur-Marne" }
+    - { ru: "Ла-Рошель", lat: "La Rochelle" }
+    - { ru: "Мериньяк", lat: "Merignac" }
+    - { ru: "Кале", lat: "Calais" }
+    - { ru: "Рёй-Мальмезон", lat: "Rueil-Malmaison" }
+    - { ru: "Антиб", lat: "Antibes" }
+    - { ru: "Аньер-сюр-Сен", lat: "Asnieres-sur-Seine" }
+    - { ru: "Безье", lat: "Beziers" }
+    - { ru: "Леваллуа-Перре", lat: "Levallois-Perret" }
+    - { ru: "Кемпер", lat: "Quimper" }
+    - { ru: "Дранси", lat: "Drancy" }
+    - { ru: "Нуази-ле-Гран", lat: "Noisy-le-Grand" }
+    - { ru: "Иси-ле-Мулино", lat: "Issy-les-Moulineaux" }
+    - { ru: "Канн", lat: "Cannes" }
+    - { ru: "Труа", lat: "Troyes" }
+    - { ru: "Ла-Сен-сюр-Мер", lat: "La Seyne-sur-Mer" }
+    - { ru: "Мо", lat: "Meaux" }
+    - { ru: "Эври", lat: "Evry" }
+    - { ru: "Серже", lat: "Cergy" }
+    - { ru: "Бурж", lat: "Bourges" }
+    - { ru: "Пессак", lat: "Pessac" }
+    - { ru: "Валанс", lat: "Valence" }
+    - { ru: "Иври-сюр-Сен", lat: "Ivry-sur-Seine" }
+    - { ru: "Клиши", lat: "Clichy" }
+    - { ru: "Кламар", lat: "Clamart" }
+    - { ru: "Вениссьё", lat: "Venissieux" }
+    - { ru: "Бобиньи", lat: "Bobigny" }
+    - { ru: "Сен-Мор-де-Фоссе", lat: "Saint-Maur-des-Fosses" }
+    - { ru: "Байонн", lat: "Bayonne" }
+    - { ru: "Йер", lat: "Hyeres" }
+    - { ru: "Монтобан", lat: "Montauban" }
+    - { ru: "Шамбери", lat: "Chambery" }
+    - { ru: "Ниор", lat: "Niort" }
+    - { ru: "Сартрувиль", lat: "Sartrouville" }
+    - { ru: "Шоле", lat: "Cholet" }
+    - { ru: "Сарсель", lat: "Sarcelles" }
+    - { ru: "Нарбонн", lat: "Narbonne" }
+    - { ru: "Лорьян", lat: "Lorient" }
+    - { ru: "Сен-Кантен", lat: "Saint-Quentin" }
+    - { ru: "Эпине-сюр-Сен", lat: "Epinay-sur-Seine" }
+    - { ru: "Вийжюиф", lat: "Villejuif" }
+    - { ru: "Арль", lat: "Arles" }
+    - { ru: "Эдирне", lat: "Edirne" }
+    - { ru: "Текирдаг", lat: "Tekirdag" }
+    - { ru: "Чорлу", lat: "Corlu" }
+    - { ru: "Кыркларели", lat: "Kirklareli" }
