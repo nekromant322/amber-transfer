@@ -14,6 +14,7 @@ export default function BookingWidget() {
   const [from, setFrom] = useState('')
   const [to, setTo] = useState('')
   const [date, setDate] = useState('')
+  const [passport, setPassport] = useState('eu')
 
   return (
     <div className={styles.widget}>
@@ -90,6 +91,49 @@ export default function BookingWidget() {
           </div>
         </div>
       </div>
+
+        <div className={styles.field}>
+          <label className={styles.fieldLabel}>
+            <span className={styles.fieldIcon}>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="1" y="2" width="12" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.2"/>
+                <circle cx="5" cy="6" r="1.5" stroke="currentColor" strokeWidth="1.1"/>
+                <path d="M8 5h3M8 7.5h2" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round"/>
+              </svg>
+            </span>
+            Паспорт
+          </label>
+          <div className={styles.passportToggle}>
+            <button
+              className={`${styles.passportBtn} ${passport === 'eu' ? styles.passportBtnActive : ''}`}
+              onClick={() => setPassport('eu')}
+              type="button"
+            >
+              <svg width="18" height="12" viewBox="0 0 18 12" xmlns="http://www.w3.org/2000/svg">
+                <rect width="18" height="12" rx="1" fill="#003399"/>
+                <g fill="#FFCC00">
+                  <circle cx="9" cy="2" r="0.7"/>
+                  <circle cx="11.6" cy="2.8" r="0.7"/>
+                  <circle cx="13" cy="5" r="0.7"/>
+                  <circle cx="12.2" cy="7.5" r="0.7"/>
+                  <circle cx="9.9" cy="9.3" r="0.7"/>
+                  <circle cx="8.1" cy="9.3" r="0.7"/>
+                  <circle cx="5.8" cy="7.5" r="0.7"/>
+                  <circle cx="5" cy="5" r="0.7"/>
+                  <circle cx="6.4" cy="2.8" r="0.7"/>
+                </g>
+              </svg>
+              ЕС
+            </button>
+            <button
+              className={`${styles.passportBtn} ${passport === 'other' ? styles.passportBtnActive : ''}`}
+              onClick={() => setPassport('other')}
+              type="button"
+            >
+              Другой
+            </button>
+          </div>
+        </div>
 
       <button className={styles.submitBtn}>
         <span>Узнать стоимость</span>

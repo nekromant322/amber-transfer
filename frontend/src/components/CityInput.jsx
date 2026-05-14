@@ -39,8 +39,19 @@ export default function CityInput({ placeholder, value, onChange, exclude }) {
   const filter = (list) => exclude ? list.filter(c => c !== exclude) : list
 
   useEffect(() => {
-    setSuggestions(prev => prev.filter(c => c !== exclude))
-  }, [exclude])
+    if (!query) {
+      setSuggestions(exclude ? DEFAULTS.filter(c => c !== exclude) : DEFAULTS)
+    } else {
+      const lower = query.toLowerCase()
+      setSuggestions(
+        allCities
+          .filter(c => c.ru.toLowerCase().includes(lower) || c.lat.toLowerCase().includes(lower))
+          .filter(c => c.ru !== exclude)
+          .slice(0, 8)
+          .map(c => c.ru)
+      )
+    }
+  }, [exclude, allCities])
 
   const handleFocus = () => {
     if (!query) setSuggestions(filter(DEFAULTS))

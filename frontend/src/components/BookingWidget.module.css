@@ -185,6 +185,39 @@
   color: var(--amber);
 }
 
+.passportToggle {
+  display: flex;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.passportBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  border-radius: 2px;
+  border: 1px solid var(--black-border);
+  background: transparent;
+  color: rgba(255,255,255,0.45);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.passportBtn:hover {
+  border-color: rgba(232,169,0,0.4);
+  color: rgba(255,255,255,0.75);
+}
+
+.passportBtnActive {
+  border-color: var(--amber);
+  color: var(--white);
+  background: rgba(232,169,0,0.08);
+}
+
 .submitBtn {
   width: 100%;
   display: flex;
