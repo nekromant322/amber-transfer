@@ -66,8 +66,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo ${{ secrets.GITHUB_TOKEN }} | sudo docker login ghcr.io -u ${{ github.actor }} --password-stdin
-            echo DB_HOST = transfer-db
-            echo DB_PORT = 5432
+            echo DB_HOST=transfer-db >> transfer-env.txt
+            echo DB_PORT=5432 >> transfer-env.txt
             echo TRANSFER_DB_USER=postgres >> transfer-env.txt
             echo TRANSFER_DB_PASSWORD=postgres >> transfer-env.txt
 
