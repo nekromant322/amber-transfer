@@ -67,8 +67,10 @@ jobs:
           script: |
             echo ${{ secrets.GITHUB_TOKEN }} | sudo docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-            echo TRANSFER_DB_USER=${{ secrets.TRANSFER_DB_USER }} >> transfer-env.txt
-            echo TRANSFER_DB_PASSWORD=${{ secrets.TRANSFER_DB_PASSWORD }} >> transfer-env.txt
+#            echo TRANSFER_DB_USER=${{ secrets.TRANSFER_DB_USER }} >> transfer-env.txt
+#            echo TRANSFER_DB_PASSWORD=${{ secrets.TRANSFER_DB_PASSWORD }} >> transfer-env.txt
+            echo TRANSFER_DB_USER=postgres >> transfer-env.txt
+            echo TRANSFER_DB_PASSWORD=postgres >> transfer-env.txt
 
             sudo -S docker stop transfer-backend || true
             sudo -S docker stop transfer-frontend || true
@@ -79,4 +81,4 @@ jobs:
             sudo -S docker compose -f docker-compose.yml --env-file=transfer-env.txt up -d
             sudo -S docker ps -a
 
-#            rm transfer-env.txt
+            rm transfer-env.txt
