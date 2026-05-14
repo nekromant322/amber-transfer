@@ -71,6 +71,10 @@ jobs:
             echo DB_PORT=5432 >> transfer-env.txt
             echo TRANSFER_DB_USER=postgres >> transfer-env.txt
             echo TRANSFER_DB_PASSWORD=postgres >> transfer-env.txt
+            
+            echo TG_BOT_USERNAME= AmberTransferBot >> transfer-env.txt
+            echo TG_BOT_TOKEN=${{ secrets.TG_BOT_TOKEN }} >> transfer-env.txt
+            
 
             sudo -S docker stop transfer-backend || true
             sudo -S docker stop transfer-frontend || true
