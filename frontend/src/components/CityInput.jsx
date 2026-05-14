@@ -8,7 +8,7 @@ const DEFAULTS = [
   'Берлин', 'Вроцлав', 'Рига', 'Таллин', 'Краков', 'Познань',
 ]
 
-export default function CityInput({ placeholder, value, onChange }) {
+export default function CityInput({ placeholder, value, onChange, exclude }) {
   const [query, setQuery] = useState(value || '')
   const [suggestions, setSuggestions] = useState([])
   const [open, setOpen] = useState(false)
@@ -36,8 +36,14 @@ export default function CityInput({ placeholder, value, onChange }) {
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
+  const filter = (list) => exclude ? list.filter(c => c !== exclude) : list
+
+  useEffect(() => {
+    setSuggestions(prev => prev.filter(c => c !== exclude))
+  }, [exclude])
+
   const handleFocus = () => {
-    if (!query) setSuggestions(DEFAULTS)
+    if (!query) setSuggestions(filter(DEFAULTS))
     setOpen(true)
   }
 
@@ -46,13 +52,14 @@ export default function CityInput({ placeholder, value, onChange }) {
     setQuery(val)
     onChange(val)
     if (!val) {
-      setSuggestions(DEFAULTS)
+      setSuggestions(filter(DEFAULTS))
       setOpen(true)
       return
     }
     const lower = val.toLowerCase()
     const matched = allCities
       .filter(c => c.ru.toLowerCase().includes(lower) || c.lat.toLowerCase().includes(lower))
+      .filter(c => c.ru !== exclude)
       .slice(0, 8)
       .map(c => c.ru)
     setSuggestions(matched)

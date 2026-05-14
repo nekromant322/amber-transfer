@@ -4,9 +4,16 @@ import { useState } from 'react'
 import styles from './BookingWidget.module.css'
 import CityInput from './CityInput'
 
+function formatDate(val) {
+  if (!val) return null
+  const [y, m, d] = val.split('-')
+  return `${d}.${m}.${y}`
+}
+
 export default function BookingWidget() {
   const [from, setFrom] = useState('')
   const [to, setTo] = useState('')
+  const [date, setDate] = useState('')
 
   return (
     <div className={styles.widget}>
@@ -26,7 +33,7 @@ export default function BookingWidget() {
             </span>
             Откуда
           </label>
-          <CityInput placeholder="Введите город" value={from} onChange={setFrom} />
+          <CityInput placeholder="Введите город" value={from} onChange={setFrom} exclude={to} />
         </div>
 
         <div className={styles.swapWrap} aria-hidden="true">
@@ -55,7 +62,7 @@ export default function BookingWidget() {
             </span>
             Куда
           </label>
-          <CityInput placeholder="Введите город" value={to} onChange={setTo} />
+          <CityInput placeholder="Введите город" value={to} onChange={setTo} exclude={from} />
         </div>
 
         <div className={styles.field}>
@@ -69,11 +76,18 @@ export default function BookingWidget() {
             </span>
             Дата отправления
           </label>
-          <input
-            type="date"
-            className={styles.dateInput}
-            min={new Date().toISOString().split('T')[0]}
-          />
+          <div className={styles.dateWrap}>
+            <span className={styles.dateFakeText}>
+              {formatDate(date) || <span className={styles.datePlaceholder}>ДД.ММ.ГГГГ</span>}
+            </span>
+            <input
+              type="date"
+              className={styles.dateInput}
+              value={date}
+              onChange={e => setDate(e.target.value)}
+              min={new Date().toISOString().split('T')[0]}
+            />
+          </div>
         </div>
       </div>
 
