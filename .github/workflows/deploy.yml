@@ -22,7 +22,7 @@ jobs:
           target: "/home/github-transfer"
 
   build_and_push_images:
-    name: Push images to DockerHub
+    name: Push images to Registry
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -66,6 +66,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo ${{ secrets.GITHUB_TOKEN }} | sudo docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            rm -f transfer-env.txt
             echo DB_HOST=transfer-db >> transfer-env.txt
             echo DB_PORT=5432 >> transfer-env.txt
             echo TRANSFER_DB_USER=postgres >> transfer-env.txt
