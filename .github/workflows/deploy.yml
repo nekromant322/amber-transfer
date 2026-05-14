@@ -75,6 +75,7 @@ jobs:
             echo TG_BOT_USERNAME= AmberTransferBot >> transfer-env.txt
             echo TG_BOT_TOKEN=${{ secrets.TG_BOT_TOKEN }} >> transfer-env.txt
             
+            echo GOOGLE_SHEETS_API_KEY = ${{ secrets.GOOGLE_SHEETS_API_KEY }} >> transfer-env.txt
 
             sudo -S docker stop transfer-backend || true
             sudo -S docker stop transfer-frontend || true
