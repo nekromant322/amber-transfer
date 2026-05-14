@@ -9,5 +9,5 @@ spring:
   datasource:
     password: ${POSTGRES_PASSWORD:postgres}
     username: ${POSTGRES_USER:postgres}
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5438}/transfer-db
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5438}/transfer_db
     driver-class-name: org.postgresql.Driver
