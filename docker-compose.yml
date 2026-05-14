@@ -10,9 +10,7 @@ services:
     container_name: transfer-db
     restart: always
     environment:
-      POSTGRES_DB: transfer-  db
-      DB_HOST: ${DB_HOST:-localhost}
-      DB_PORT: ${DB_PORT:-5438}
+      POSTGRES_DB: transfer-db
       POSTGRES_USER: ${TRANSFER_DB_USER:-postgres}
       POSTGRES_PASSWORD: ${TRANSFER_DB_PASSWORD:-postgres}
     ports:
@@ -29,8 +27,8 @@ services:
     container_name: transfer-backend
     restart: unless-stopped
     environment:
-      DB_HOST: transfer-db
-      POSTGRES_DB: transffer_db
+      DB_HOST: ${DB_HOST:-localhost}
+      DB_PORT: ${DB_PORT:-5438}
     ports:
       - "9001:8080"
     networks:
