@@ -1,16 +1,24 @@
 version: '3.8'
 
+networks:
+  transfer-network:
+    driver: bridge
+
 services:
   transfer-db:
     image: postgres:14.1-alpine
     container_name: transfer-db
     restart: always
     environment:
-      POSTGRES_DB: transfer_db
+      POSTGRES_DB: transfer-  db
+      DB_HOST: ${DB_HOST:-localhost}
+      DB_PORT: ${DB_PORT:-5438}
       POSTGRES_USER: ${TRANSFER_DB_USER:-postgres}
       POSTGRES_PASSWORD: ${TRANSFER_DB_PASSWORD:-postgres}
     ports:
       - "5438:5432"
+    networks:
+      - transfer-network
     logging:
       driver: "json-file"
       options:
@@ -21,10 +29,12 @@ services:
     container_name: transfer-backend
     restart: unless-stopped
     environment:
-      DB_HOST: ${DB_HOST:-host.docker.internal}
+      DB_HOST: transfer-db
       POSTGRES_DB: transffer_db
     ports:
       - "9001:8080"
+    networks:
+      - transfer-network
     logging:
       driver: "json-file"
       options:
@@ -38,6 +48,8 @@ services:
     restart: unless-stopped
     ports:
       - "9002:8080"
+    networks:
+      - transfer-network
     logging:
       driver: "json-file"
       options:
