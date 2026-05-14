@@ -1,5 +1,25 @@
+# ── Frontend ──────────────────────────────────────────────
 node_modules/
-frontend/dist/
 frontend/.next/
 frontend/out/
+frontend/dist/
+frontend/.env*.local
+
+# ── Backend ───────────────────────────────────────────────
+backend/target/
+*.class
+*.jar
+*.war
+
+# ── IDE ───────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+
+# ── OS ────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Misc ──────────────────────────────────────────────────
 .claude/
+*.log
