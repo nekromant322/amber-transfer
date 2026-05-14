@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004_create_order_notifications
+      author: transfer
+      changes:
+        - createTable:
+            tableName: order_notifications
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: order_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: chat_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: message_id
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+              - column:
+                  name: taken
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
