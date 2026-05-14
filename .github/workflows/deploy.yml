@@ -73,8 +73,9 @@ jobs:
             sudo -S docker stop transfer-frontend || true
             sudo -S docker rm transfer-backend || true
             sudo -S docker rm transfer-frontend || true
-            sudo -S docker rmi nekromant322/transfer-backend || true
-            sudo -S docker rmi nekromant322/transfer-frontend || true
+            sudo -S docker rmi ghcr.io/nekromant322/transfer-backend:latest || true
+            sudo -S docker rmi ghcr.io/nekromant322/transfer-frontend:latest || true
+            sudo -S docker compose -f docker-compose.yml --env-file=transfer-env.txt pull
             sudo -S docker compose -f docker-compose.yml --env-file=transfer-env.txt up -d
             sudo -S docker ps -a
 
