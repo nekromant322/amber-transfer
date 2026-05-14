@@ -10,7 +10,7 @@ services:
     container_name: transfer-db
     restart: always
     environment:
-      POSTGRES_DB: transfer-db
+      POSTGRES_DB: transfer_db
       POSTGRES_USER: ${TRANSFER_DB_USER:-postgres}
       POSTGRES_PASSWORD: ${TRANSFER_DB_PASSWORD:-postgres}
     ports:
