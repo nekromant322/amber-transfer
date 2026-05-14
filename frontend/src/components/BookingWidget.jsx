@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './BookingWidget.module.css'
 import CityInput from './CityInput'
 
@@ -14,16 +14,39 @@ export default function BookingWidget() {
   const [from, setFrom] = useState('')
   const [to, setTo] = useState('')
   const [date, setDate] = useState('')
-  const [passport, setPassport] = useState('eu')
+  const [passport, setPassport] = useState('')
   const [phone, setPhone] = useState('')
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const [price, setPrice] = useState(null)
+  const [priceLoading, setPriceLoading] = useState(false)
+
+  useEffect(() => {
+    if (!from || !to) {
+      setPrice(null)
+      return
+    }
+    const apiBase = process.env.NEXT_PUBLIC_API_URL ?? ''
+    const params = new URLSearchParams({ from, to })
+    if (passport) params.set('passport', passport)
+
+    setPriceLoading(true)
+    fetch(`${apiBase}/api/price?${params}`)
+      .then(res => res.ok ? res.json() : null)
+      .then(data => setPrice(data?.price ?? null))
+      .catch(() => setPrice(null))
+      .finally(() => setPriceLoading(false))
+  }, [from, to, passport])
 
   async function handleSubmit() {
     setError('')
     if (!from || !to || !date || !phone) {
       setError('Пожалуйста, заполните все поля')
+      return
+    }
+    if (!passport) {
+      setError('Пожалуйста, выберите тип паспорта')
       return
     }
     setLoading(true)
@@ -111,7 +134,9 @@ export default function BookingWidget() {
         {from && to && (
           <div className={styles.pricePreview}>
             <span className={styles.priceLabel}>Ориентировочная стоимость</span>
-            <span className={styles.priceValue}>~ 300 €</span>
+            <span className={styles.priceValue}>
+              {priceLoading ? '...' : price != null ? `~ ${price} €` : '—'}
+            </span>
           </div>
         )}
 
@@ -151,11 +176,12 @@ export default function BookingWidget() {
               </svg>
             </span>
             Паспорт
+            <span className={styles.requiredMark}>*</span>
           </label>
           <div className={styles.passportToggle}>
             <button
               className={`${styles.passportBtn} ${passport === 'eu' ? styles.passportBtnActive : ''}`}
-              onClick={() => setPassport('eu')}
+              onClick={() => setPassport(passport === 'eu' ? '' : 'eu')}
               type="button"
             >
               <svg width="18" height="12" viewBox="0 0 18 12" xmlns="http://www.w3.org/2000/svg">
@@ -176,7 +202,7 @@ export default function BookingWidget() {
             </button>
             <button
               className={`${styles.passportBtn} ${passport === 'other' ? styles.passportBtnActive : ''}`}
-              onClick={() => setPassport('other')}
+              onClick={() => setPassport(passport === 'other' ? '' : 'other')}
               type="button"
             >
               Другой

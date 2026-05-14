@@ -27,8 +27,11 @@ services:
     container_name: transfer-backend
     restart: unless-stopped
     environment:
+      TG_BOT_TOKEN: ${TG_BOT_TOKEN:-empy}
+      TG_BOT_USERNAME: ${TG_BOT_USERNAME:-empty}
       DB_HOST: ${DB_HOST:-localhost}
-      DB_PORT: ${DB_PORT:-5438}/b
+      DB_PORT: ${DB_PORT:-5438}
+      GOOGLE_SHEETS_API_KEY: ${GOOGLE_SHEETS_API_KEY}
     ports:
       - "9001:8080"
     networks:

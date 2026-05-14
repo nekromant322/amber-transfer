@@ -4,8 +4,16 @@ import { useState, useEffect, useRef } from 'react'
 import styles from './CityInput.module.css'
 
 const DEFAULTS = [
-  'Калининград', 'Вильнюс', 'Варшава', 'Гданьск',
-  'Берлин', 'Вроцлав', 'Рига', 'Таллин', 'Краков', 'Познань',
+  { ru: 'Калининград', lat: 'Kaliningrad' },
+  { ru: 'Вильнюс',     lat: 'Vilnius'     },
+  { ru: 'Варшава',     lat: 'Warsaw'      },
+  { ru: 'Гданьск',     lat: 'Gdansk'      },
+  { ru: 'Берлин',      lat: 'Berlin'      },
+  { ru: 'Вроцлав',     lat: 'Wroclaw'     },
+  { ru: 'Рига',        lat: 'Riga'        },
+  { ru: 'Таллин',      lat: 'Tallinn'     },
+  { ru: 'Краков',      lat: 'Krakow'      },
+  { ru: 'Познань',     lat: 'Poznan'      },
 ]
 
 export default function CityInput({ placeholder, value, onChange, exclude }) {
@@ -16,7 +24,8 @@ export default function CityInput({ placeholder, value, onChange, exclude }) {
   const containerRef = useRef(null)
 
   useEffect(() => {
-    fetch('/api/cities')
+    const apiBase = process.env.NEXT_PUBLIC_API_URL ?? ''
+    fetch(`${apiBase}/api/cities`)
       .then(r => r.json())
       .then(data => setAllCities(data))
       .catch(() => {})
@@ -36,25 +45,22 @@ export default function CityInput({ placeholder, value, onChange, exclude }) {
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
-  const filter = (list) => exclude ? list.filter(c => c !== exclude) : list
+  function filterCities(list, q) {
+    const lower = q.toLowerCase()
+    return list
+      .filter(c => c.ru !== exclude && c.lat !== exclude)
+      .filter(c => c.ru.toLowerCase().includes(lower) || c.lat.toLowerCase().includes(lower))
+      .slice(0, 8)
+  }
 
-  useEffect(() => {
-    if (!query) {
-      setSuggestions(exclude ? DEFAULTS.filter(c => c !== exclude) : DEFAULTS)
-    } else {
-      const lower = query.toLowerCase()
-      setSuggestions(
-        allCities
-          .filter(c => c.ru.toLowerCase().includes(lower) || c.lat.toLowerCase().includes(lower))
-          .filter(c => c.ru !== exclude)
-          .slice(0, 8)
-          .map(c => c.ru)
-      )
-    }
-  }, [exclude, allCities])
+  function getDefaults() {
+    return exclude
+      ? DEFAULTS.filter(c => c.ru !== exclude && c.lat !== exclude)
+      : DEFAULTS
+  }
 
   const handleFocus = () => {
-    if (!query) setSuggestions(filter(DEFAULTS))
+    if (!query) setSuggestions(getDefaults())
     setOpen(true)
   }
 
@@ -63,25 +69,23 @@ export default function CityInput({ placeholder, value, onChange, exclude }) {
     setQuery(val)
     onChange(val)
     if (!val) {
-      setSuggestions(filter(DEFAULTS))
+      setSuggestions(getDefaults())
       setOpen(true)
       return
     }
-    const lower = val.toLowerCase()
-    const matched = allCities
-      .filter(c => c.ru.toLowerCase().includes(lower) || c.lat.toLowerCase().includes(lower))
-      .filter(c => c.ru !== exclude)
-      .slice(0, 8)
-      .map(c => c.ru)
+    const matched = filterCities(allCities, val)
     setSuggestions(matched)
     setOpen(matched.length > 0)
   }
 
   const handleSelect = (city) => {
-    setQuery(city)
-    onChange(city)
+    setQuery(city.lat)
+    onChange(city.lat)
     setOpen(false)
   }
+
+  // detect if query looks like Latin input
+  const isLatinQuery = query && /^[a-zA-Z]/.test(query)
 
   return (
     <div className={styles.wrap} ref={containerRef}>
@@ -98,11 +102,16 @@ export default function CityInput({ placeholder, value, onChange, exclude }) {
         <ul className={styles.dropdown}>
           {suggestions.map(city => (
             <li
-              key={city}
+              key={city.ru}
               className={styles.item}
               onMouseDown={() => handleSelect(city)}
             >
-              {city}
+              <span className={styles.itemPrimary}>
+                {isLatinQuery ? city.lat : city.ru}
+              </span>
+              <span className={styles.itemSecondary}>
+                {isLatinQuery ? city.ru : city.lat}
+              </span>
             </li>
           ))}
         </ul>

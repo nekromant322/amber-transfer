@@ -196,6 +196,11 @@
   color: var(--amber);
 }
 
+.requiredMark {
+  color: #ff6b6b;
+  margin-left: 2px;
+}
+
 .passportToggle {
   display: flex;
   gap: 8px;
