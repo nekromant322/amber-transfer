@@ -15,6 +15,48 @@ export default function BookingWidget() {
   const [to, setTo] = useState('')
   const [date, setDate] = useState('')
   const [passport, setPassport] = useState('eu')
+  const [phone, setPhone] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
+
+  async function handleSubmit() {
+    setError('')
+    if (!from || !to || !date || !phone) {
+      setError('Пожалуйста, заполните все поля')
+      return
+    }
+    setLoading(true)
+    try {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL ?? ''
+      const res = await fetch(`${apiBase}/api/orders`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ from, to, date, passport, phone }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setError(data.error || 'Что-то пошло не так')
+        return
+      }
+      setSubmitted(true)
+    } catch {
+      setError('Ошибка соединения с сервером')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  if (submitted) {
+    return (
+      <div className={styles.widget}>
+        <div className={styles.successMessage}>
+          <p className={styles.successTitle}>Заявка принята!</p>
+          <p className={styles.footnote}>Менеджер свяжется с вами в течение 15 минут</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={styles.widget}>
@@ -65,6 +107,13 @@ export default function BookingWidget() {
           </label>
           <CityInput placeholder="Введите город" value={to} onChange={setTo} exclude={from} />
         </div>
+
+        {from && to && (
+          <div className={styles.pricePreview}>
+            <span className={styles.priceLabel}>Ориентировочная стоимость</span>
+            <span className={styles.priceValue}>~ 300 €</span>
+          </div>
+        )}
 
         <div className={styles.field}>
           <label className={styles.fieldLabel}>
@@ -135,11 +184,33 @@ export default function BookingWidget() {
           </div>
         </div>
 
-      <button className={styles.submitBtn}>
-        <span>Узнать стоимость</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+        <div className={styles.field}>
+          <label className={styles.fieldLabel}>
+            <span className={styles.fieldIcon}>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M5.5 1H3C2 1 1 2 1 3C1 9 5 13 11 13C12 13 13 12 13 11V8.5L10 7.5L9 9C9 9 7.5 8.5 6.5 7.5C5.5 6.5 5 5 5 5L6.5 4L5.5 1Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
+              </svg>
+            </span>
+            Телефон
+          </label>
+          <input
+            className={styles.phoneInput}
+            type="tel"
+            placeholder="+7 (___) ___-__-__"
+            value={phone}
+            onChange={e => setPhone(e.target.value)}
+          />
+        </div>
+
+      {error && <p className={styles.errorMessage}>{error}</p>}
+
+      <button className={styles.submitBtn} onClick={handleSubmit} disabled={loading}>
+        <span>{loading ? 'Отправка...' : 'Отправить заявку'}</span>
+        {!loading && (
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        )}
       </button>
 
       <p className={styles.footnote}>

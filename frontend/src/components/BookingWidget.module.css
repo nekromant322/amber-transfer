@@ -48,6 +48,17 @@
   border-radius: 20px;
 }
 
+.priceBadge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+  border: 1px solid rgba(232, 169, 0, 0.4);
+  background: rgba(232, 169, 0, 0.08);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
 .fields {
   display: flex;
   flex-direction: column;
@@ -254,6 +265,70 @@
   font-size: 0.7rem;
   color: rgba(255,255,255,0.25);
   letter-spacing: 0.04em;
+}
+
+.phoneInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  padding: 4px 0;
+}
+
+.phoneInput::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.pricePreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  margin-top: 20px;
+  border: 1px solid rgba(232, 169, 0, 0.25);
+  border-radius: 2px;
+  background: rgba(232, 169, 0, 0.05);
+}
+
+.priceLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+.priceValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--amber);
+  letter-spacing: 0.03em;
+}
+
+.errorMessage {
+  font-size: 0.75rem;
+  color: #ff6b6b;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.successMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 0;
+}
+
+.successTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--amber);
+  letter-spacing: 0.05em;
 }
 
 @media (max-width: 480px) {
