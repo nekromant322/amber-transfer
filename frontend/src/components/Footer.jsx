@@ -42,11 +42,15 @@ export default function Footer() {
             <p className={styles.navTitle}>Связь</p>
             <p className={styles.contactItem}>
               <span>Телефон</span>
-              <a href="tel:+7XXXXXXXXXX">+7 (XXX) XXX-XX-XX</a>
+              <a href="tel:+79500084457">+7 950 008 4457</a>
+            </p>
+            <p className={styles.contactItem}>
+              <span>Телефон</span>
+              <a href="tel:+37369140940">+373 69 140 940</a>
             </p>
             <p className={styles.contactItem}>
               <span>Telegram</span>
-              <a href="#">@amber_transfer</a>
+              <a href="https://t.me/amber_transfer">@amber_transfer</a>
             </p>
             <p className={styles.contactItem}>
               <span>Email</span>
