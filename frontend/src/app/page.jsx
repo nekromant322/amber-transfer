@@ -2,6 +2,7 @@ import Nav from '../components/Nav'
 import Hero from '../components/Hero'
 import HowItWorks from '../components/HowItWorks'
 import Services from '../components/Services'
+import Cars from '../components/Cars'
 import Tariffs from '../components/Tariffs'
 import FAQ from '../components/FAQ'
 import SeoLinks from '../components/SeoLinks'
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <Services />
+      <Cars />
       <Tariffs />
       <FAQ />
       <SeoLinks />
