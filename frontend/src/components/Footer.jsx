@@ -43,18 +43,11 @@ export default function Footer() {
             <p className={styles.contactItem}>
               <span>Телефон</span>
               <a href="tel:+79500084457">+7 950 008 4457</a>
-            </p>
-            <p className={styles.contactItem}>
-              <span>Телефон</span>
               <a href="tel:+37369140940">+373 69 140 940</a>
             </p>
             <p className={styles.contactItem}>
               <span>Telegram</span>
               <a href="https://t.me/amber_transfer">@amber_transfer</a>
-            </p>
-            <p className={styles.contactItem}>
-              <span>Email</span>
-              <a href="mailto:info@amber-transfer.ru">info@amber-transfer.ru</a>
             </p>
           </div>
 

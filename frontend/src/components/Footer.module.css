@@ -106,7 +106,9 @@
 }
 
 .contactItem a {
+  display: block;
   font-size: 0.85rem;
+  line-height: 1.6;
   color: var(--white-dim);
   font-weight: 300;
   transition: color 0.2s;
