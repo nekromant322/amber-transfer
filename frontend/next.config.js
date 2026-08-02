@@ -1,6 +1,11 @@
+const path = require('path')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   ...(process.env.NODE_ENV === 'production' ? { output: 'export' } : {}),
+  turbopack: {
+    root: path.join(__dirname),
+  },
   async rewrites() {
     return [
       {
