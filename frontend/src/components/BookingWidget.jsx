@@ -55,7 +55,7 @@ export default function BookingWidget() {
       const res = await fetch(`${apiBase}/api/orders`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ from, to, date, passport, phone }),
+        body: JSON.stringify({ from, to, date, passport, phone, price }),
       })
       const data = await res.json()
       if (!res.ok) {

@@ -34,6 +34,9 @@ public class Order {
     @Column(name = "phone", nullable = false)
     private String phone;
 
+    @Column(name = "shown_price")
+    private Double shownPrice;
+
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
     private OrderStatus status = OrderStatus.PENDING;
@@ -41,12 +44,13 @@ public class Order {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    public Order(String fromCity, String toCity, LocalDate date, String passportType, String phone) {
+    public Order(String fromCity, String toCity, LocalDate date, String passportType, String phone, Double shownPrice) {
         this.fromCity = fromCity;
         this.toCity = toCity;
         this.date = date;
         this.passportType = passportType;
         this.phone = phone;
+        this.shownPrice = shownPrice;
         this.status = OrderStatus.PENDING;
         this.createdAt = LocalDateTime.now();
     }

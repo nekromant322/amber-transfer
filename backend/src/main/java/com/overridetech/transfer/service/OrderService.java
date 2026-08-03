@@ -40,7 +40,7 @@ public class OrderService {
         if (req.date().isBefore(LocalDate.now())) {
             throw new IllegalArgumentException("Дата поездки не может быть в прошлом");
         }
-        Order order = new Order(req.from(), req.to(), req.date(), req.passport(), req.phone());
+        Order order = new Order(req.from(), req.to(), req.date(), req.passport(), req.phone(), req.price());
         orderRepository.save(order);
         notifyDrivers(order);
         return order;
@@ -75,6 +75,9 @@ public class OrderService {
         if (drivers.isEmpty()) return;
 
         String passport = "eu".equalsIgnoreCase(order.getPassportType()) ? "ЕС" : "Другой";
+        String priceLine = order.getShownPrice() != null
+                ? "💰 Цена на сайте: %.0f €".formatted(order.getShownPrice())
+                : "💰 Цена на сайте не была показана клиенту";
         String text = """
                 🚗 Новый заказ #%d
 
@@ -82,12 +85,14 @@ public class OrderService {
                 🏁 Куда: %s
                 📅 Дата: %s
                 🪪 Паспорт: %s
+                %s
                 """.formatted(
                 order.getId(),
                 order.getFromCity(),
                 order.getToCity(),
                 order.getDate().format(DATE_FMT),
-                passport
+                passport,
+                priceLine
         );
 
         InlineKeyboardMarkup keyboard = InlineKeyboardMarkup.builder()

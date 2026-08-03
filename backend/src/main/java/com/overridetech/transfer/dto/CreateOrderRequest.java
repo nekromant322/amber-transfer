@@ -7,5 +7,6 @@ public record CreateOrderRequest(
         String to,
         LocalDate date,
         String passport,
-        String phone
+        String phone,
+        Double price
 ) {}

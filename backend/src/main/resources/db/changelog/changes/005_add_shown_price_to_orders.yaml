@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005_add_shown_price_to_orders
+      author: transfer
+      changes:
+        - addColumn:
+            tableName: orders
+            columns:
+              - column:
+                  name: shown_price
+                  type: NUMERIC(10,2)
+                  constraints:
+                    nullable: true
