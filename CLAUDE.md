@@ -88,6 +88,9 @@ If `npm run dev` reports the port already in use, or you see `Manifest file is e
   - `Footer.jsx` — phones (`+7 950 008 4457`, `+373 69 140 940`), Telegram `@amber_transfer`. **No email** (intentionally removed).
 - All page copy is in Russian.
 
+### ⚠️ Font rule — never put digits in `--font-display`
+`--font-display` (Cormorant Garamond) renders numerals as old-style figures — its "1" glyph is a bare vertical stroke that reads as a roman numeral "I" (this has already caused a visible bug: "~1 ч" looked like "~I ч"). **Any text containing digits (stats, distances, times, seat counts, prices, dates) must use `--font-body` (Raleway), never `--font-display`, regardless of how "premium" the serif looks.** `font-variant-numeric: lining-nums` is set globally on `body` in `globals.css` as a baseline safeguard, but font-family choice is what actually matters — don't rely on the CSS property alone. Only headline/title text with no digits may use `--font-display`.
+
 ### Backend integration
 Components call `fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/...`)` (falls back to `''`). In dev, `next.config.js` rewrites `/api/:path*` → `http://localhost:8080/api/:path*` (rewrites don't apply to the static-export prod build — prod relies on `NEXT_PUBLIC_API_URL` directly). `.env.local` defines `NEXT_PUBLIC_API_URL`.
 
