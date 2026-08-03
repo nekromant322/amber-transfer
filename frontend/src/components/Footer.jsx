@@ -1,10 +1,10 @@
 import styles from './Footer.module.css'
 
 const navLinks = [
-  { label: 'Как это работает', href: '#how' },
-  { label: 'Услуги', href: '#services' },
-  { label: 'Тарифы', href: '#tariffs' },
-  { label: 'Вопросы и ответы', href: '#faq' },
+  { label: 'Как это работает', href: '/#how' },
+  { label: 'Услуги', href: '/#services' },
+  { label: 'Тарифы', href: '/#tariffs' },
+  { label: 'Вопросы и ответы', href: '/#faq' },
 ]
 
 export default function Footer() {
@@ -17,7 +17,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.main}>
           <div className={styles.brand}>
-            <a href="#" className={styles.logo}>
+            <a href="/" className={styles.logo}>
               <span className={styles.logoIcon}>◆</span>
               <span>Амбер <em>Трансфер</em></span>
             </a>
@@ -53,7 +53,7 @@ export default function Footer() {
 
           <div className={styles.cta}>
             <p className={styles.ctaText}>Готовы к поездке?</p>
-            <a href="#booking" className={styles.ctaBtn}>
+            <a href="/#booking" className={styles.ctaBtn}>
               Забронировать сейчас
             </a>
           </div>

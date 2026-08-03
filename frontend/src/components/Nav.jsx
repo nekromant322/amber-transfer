@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 import styles from './Nav.module.css'
 
 const links = [
-  { label: 'Как это работает', href: '#how' },
-  { label: 'Услуги', href: '#services' },
-  { label: 'Тарифы', href: '#tariffs' },
-  { label: 'Вопросы', href: '#faq' },
+  { label: 'Как это работает', href: '/#how' },
+  { label: 'Услуги', href: '/#services' },
+  { label: 'Тарифы', href: '/#tariffs' },
+  { label: 'Вопросы', href: '/#faq' },
 ]
 
 export default function Nav() {
@@ -23,7 +23,7 @@ export default function Nav() {
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
-        <a href="#" className={styles.logo}>
+        <a href="/" className={styles.logo}>
           <span className={styles.logoIcon}>◆</span>
           <span>Амбер <em>Трансфер</em></span>
         </a>
@@ -35,7 +35,7 @@ export default function Nav() {
             </li>
           ))}
           <li>
-            <a href="#booking" className={styles.cta} onClick={() => setMenuOpen(false)}>
+            <a href="/#booking" className={styles.cta} onClick={() => setMenuOpen(false)}>
               Забронировать
             </a>
           </li>
