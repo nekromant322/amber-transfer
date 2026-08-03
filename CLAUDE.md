@@ -15,13 +15,17 @@ Both are built as Docker images (`ghcr.io/nekromant322/transfer-backend`, `trans
 
 Java 21, Spring Boot 4.0.6, Maven, package root `com.overridetech.transfer`.
 
+**⚠️ The `java`/`mvnw` on PATH in this dev environment defaults to a JRE 8 install** (`java -version` → 1.8.0), which fails Maven compilation ("No compiler is provided"). A JDK 21 exists at `C:\Users\override\.jdks\corretto-21.0.5` — set `JAVA_HOME` to it before running Maven:
+
 ```bash
 # from backend/
-.\mvnw.cmd clean package       # Windows
-.\mvnw.cmd spring-boot:run
-.\mvnw.cmd test
-.\mvnw.cmd test -Dtest=ClassName
+JAVA_HOME="/c/Users/override/.jdks/corretto-21.0.5" ./mvnw.cmd clean package
+JAVA_HOME="/c/Users/override/.jdks/corretto-21.0.5" ./mvnw.cmd spring-boot:run
+JAVA_HOME="/c/Users/override/.jdks/corretto-21.0.5" ./mvnw.cmd test
+JAVA_HOME="/c/Users/override/.jdks/corretto-21.0.5" ./mvnw.cmd test -Dtest=ClassName
 ```
+
+**After any change under `backend/`, verify it compiles before reporting the task done** (`./mvnw.cmd compile` with the `JAVA_HOME` above) — same rule as the frontend's local-check requirement.
 
 Runs on port `8080`. No Spring Security — all `/api/**` endpoints are unauthenticated; CORS restricted via `cors.allowed-origins` property.
 
