@@ -1,27 +1,45 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './Tariffs.module.css'
 
+// Минивэн крупнее и дороже в обслуживании — наценка к базовой (легковой) цене из PriceRegistry.
+const MINIVAN_PRICE_MULTIPLIER = 1.5
+
 const routes = [
-  { from: 'Калининград', to: 'Гданьск',  distance: '150 км', time: '2–2.5 ч' },
-  { from: 'Калининград', to: 'Варшава',  distance: '430 км', time: '5–6 ч'   },
-  { from: 'Калининград', to: 'Каунас',   distance: '300 км', time: '3.5–4 ч' },
-  { from: 'Калининград', to: 'Вильнюс',  distance: '360 км', time: '4–5 ч'   },
-  { from: 'Калининград', to: 'Рига',     distance: '460 км', time: '5.5–6.5 ч' },
-  { from: 'Калининград', to: 'Берлин',   distance: '680 км', time: '7–8 ч'   },
+  { from: 'Калининград', fromLat: 'Kaliningrad', to: 'Гданьск',  toLat: 'Gdansk',    distance: '150 км', time: '2–2.5 ч' },
+  { from: 'Калининград', fromLat: 'Kaliningrad', to: 'Варшава',  toLat: 'Warsaw',    distance: '430 км', time: '5–6 ч'   },
+  { from: 'Калининград', fromLat: 'Kaliningrad', to: 'Каунас',   toLat: 'Kaunas',    distance: '300 км', time: '3.5–4 ч' },
+  { from: 'Калининград', fromLat: 'Kaliningrad', to: 'Вильнюс',  toLat: 'Vilnius',   distance: '360 км', time: '4–5 ч'   },
+  { from: 'Калининград', fromLat: 'Kaliningrad', to: 'Рига',     toLat: 'Riga',      distance: '460 км', time: '5.5–6.5 ч' },
+  { from: 'Калининград', fromLat: 'Kaliningrad', to: 'Берлин',   toLat: 'Berlin',    distance: '680 км', time: '7–8 ч'   },
 ]
 
-const classes = ['Комфорт', 'Бизнес', 'Премиум']
+const classes = ['Легковой авто', 'Минивэн']
 
 const classDetails = {
-  'Комфорт': { pax: '1–3', icon: '◎', hint: 'Volkswagen Passat, Skoda Superb и аналоги' },
-  'Бизнес':  { pax: '1–4', icon: '◆', hint: 'Mercedes E-Class, BMW 5-Series и аналоги' },
-  'Премиум': { pax: '1–3', icon: '✦', hint: 'Mercedes S-Class, BMW 7-Series и аналоги' },
+  'Легковой авто': { pax: '4', icon: '◎', hint: 'Skoda Kodiaq, Kia Sportage и аналоги' },
+  'Минивэн':       { pax: '6–8', icon: '◆', hint: 'Kia Carnival, Mercedes V-Class и аналоги' },
 }
 
 export default function Tariffs() {
-  const [activeClass, setActiveClass] = useState('Бизнес')
+  const [activeClass, setActiveClass] = useState('Легковой авто')
+  const [prices, setPrices] = useState({})
+
+  useEffect(() => {
+    const apiBase = process.env.NEXT_PUBLIC_API_URL ?? ''
+
+    routes.forEach(r => {
+      const params = new URLSearchParams({ from: r.fromLat, to: r.toLat })
+      fetch(`${apiBase}/api/price?${params}`)
+        .then(res => res.ok ? res.json() : null)
+        .then(data => {
+          if (data?.price == null) return
+          setPrices(prev => ({ ...prev, [r.toLat]: data.price }))
+        })
+        .catch(() => {})
+    })
+  }, [])
 
   return (
     <section className={styles.section} id="tariffs">
@@ -55,7 +73,15 @@ export default function Tariffs() {
         </div>
 
         <div className={styles.grid}>
-          {routes.map(r => (
+          {routes.map(r => {
+            const basePrice = prices[r.toLat]
+            const price = basePrice == null
+              ? null
+              : activeClass === 'Минивэн'
+                ? Math.round(basePrice * MINIVAN_PRICE_MULTIPLIER)
+                : basePrice
+
+            return (
             <div key={r.to} className={styles.card}>
               <div className={styles.route}>
                 <span className={styles.city}>{r.from}</span>
@@ -83,12 +109,15 @@ export default function Tariffs() {
 
               <div className={styles.priceRow}>
                 <span className={styles.priceLabel}>Стоимость</span>
-                <span className={styles.price}>Цена уточняется</span>
+                <span className={styles.price}>
+                  {price != null ? `от ${price} €` : 'Цена уточняется'}
+                </span>
               </div>
 
               <a href="#booking" className={styles.bookBtn}>Забронировать</a>
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
