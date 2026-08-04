@@ -10,7 +10,7 @@ const items = [
   },
   {
     q: 'Какие способы оплаты доступны?',
-    a: 'Оплата возможна наличными или банковской картой. Оплата производится перед поездкой.',
+    a: 'Оплата возможна наличными или переводом. После оплаты можно получить чек. Оплата в большинстве случаев производится после поездки.',
   },
   {
     q: 'Как связаться с водителем?',
@@ -47,7 +47,7 @@ export default function FAQ() {
             <p className={styles.hint}>
               Не нашли ответа? Напишите нам.
             </p>
-            <a href="#booking" className={styles.contactBtn}>Задать вопрос</a>
+            <a href="https://t.me/amber_transfer" target="_blank" rel="noopener noreferrer" className={styles.contactBtn}>Задать вопрос</a>
           </div>
 
           <div className={styles.right}>
