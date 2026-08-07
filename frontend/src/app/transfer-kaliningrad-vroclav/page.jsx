@@ -3,31 +3,31 @@ import Footer from '../../components/Footer'
 import styles from './page.module.css'
 
 export const metadata = {
-  title: 'Трансфер Калининград — Варшава | Заказать такси с водителем | Амбер Трансфер',
+  title: 'Трансфер Калининград — Вроцлав | Заказать такси с водителем | Амбер Трансфер',
   description:
-    'Трансфер из Калининграда в Варшаву на комфортных автомобилях бизнес-класса. Встреча с табличкой, фиксированная цена, профессиональные водители. Доставка в аэропорты Шопена и Модлин.',
-  keywords: 'трансфер Калининград Варшава, такси Калининград Варшава, заказать трансфер в Варшаву',
-  alternates: { canonical: '/transfer-kaliningrad-varshava' },
+    'Трансфер из Калининграда в Вроцлав на комфортных автомобилях бизнес-класса. Встреча с табличкой, фиксированная цена, профессиональные водители. Доставка в аэропорт и центр Вроцлава.',
+  keywords: 'трансфер Калининград Вроцлав, такси Калининград Вроцлав, заказать трансфер в Вроцлав',
+  alternates: { canonical: '/transfer-kaliningrad-vroclav' },
   openGraph: {
-    title: 'Трансфер Калининград — Варшава',
-    description: 'Персональный трансфер бизнес-класса из Калининграда в Варшаву.',
+    title: 'Трансфер Калининград — Вроцлав',
+    description: 'Персональный трансфер бизнес-класса из Калининграда в Вроцлав.',
     locale: 'ru_RU',
     type: 'website',
   },
 }
 
-const airports = [
+const destinations = [
   {
-    name: 'Аэропорт им. Шопена',
-    note: 'главный международный аэропорт Варшавы',
-    distance: '~430 км',
-    time: '5–6 часов',
+    name: 'Аэропорт им. Николая Коперника',
+    note: 'международный аэропорт Вроцлава',
+    distance: '~600 км',
+    time: '~10 часов',
   },
   {
-    name: 'Аэропорт Модлин',
-    note: 'бюджетный аэропорт в 35 км от центра города',
-    distance: '~370 км',
-    time: '4.5–5 часов',
+    name: 'Центр Вроцлава',
+    note: 'Рыночная площадь и Остров Тумский',
+    distance: '~600 км',
+    time: '~10 часов',
   },
 ]
 
@@ -47,8 +47,8 @@ const advantages = [
 
 const faq = [
   {
-    q: 'Сколько времени занимает трансфер до Варшавы?',
-    a: 'В среднем 5–6 часов в пути с учётом пересечения границы. Время пограничного контроля зависит от загруженности пункта пропуска и может составлять от получаса до пары часов.',
+    q: 'Сколько времени занимает трансфер до Вроцлава?',
+    a: 'В среднем около 10 часов в пути с учётом пересечения границы на переходе Мамоново — Гжехотки и остановок в дороге. На такое расстояние водитель делает плановые остановки для отдыха.',
   },
   {
     q: 'Можно ли доставить прямо к отелю или конкретному адресу?',
@@ -64,7 +64,7 @@ const faq = [
   },
 ]
 
-export default function TransferKaliningradVarshava() {
+export default function TransferKaliningradVroclav() {
   return (
     <>
       <Nav />
@@ -74,22 +74,22 @@ export default function TransferKaliningradVarshava() {
           <div className={styles.container}>
             <p className={styles.eyebrow}>Маршрут</p>
             <h1 className={styles.title}>
-              Трансфер Калининград <span className={styles.arrow}>→</span> Варшава
+              Трансфер Калининград <span className={styles.arrow}>→</span> Вроцлав
             </h1>
             <p className={styles.lead}>
               Персональный трансфер на комфортном автомобиле с профессиональным
               водителем. Забираем из дома, отеля или аэропорта Храброво и
-              доставляем в любую точку Варшавы — без пересадок и лишних остановок.
+              доставляем в любую точку Вроцлава — без пересадок и лишних остановок.
             </p>
 
             <div className={styles.facts}>
               <div className={styles.fact}>
-                <strong>~430 км</strong>
+                <strong>~600 км</strong>
                 <span>расстояние</span>
               </div>
               <div className={styles.factDivider} />
               <div className={styles.fact}>
-                <strong>5–6 ч</strong>
+                <strong>~10 ч</strong>
                 <span>время в пути</span>
               </div>
               <div className={styles.factDivider} />
@@ -105,20 +105,20 @@ export default function TransferKaliningradVarshava() {
 
         <section className={styles.section}>
           <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Куда именно в Варшаве</h2>
+            <h2 className={styles.sectionTitle}>Куда именно во Вроцлаве</h2>
             <p className={styles.sectionDesc}>
-              Довезём в любую точку города, включая оба аэропорта Варшавы.
+              Довезём в любую точку города, включая аэропорт им. Николая Коперника.
             </p>
 
             <div className={styles.airportGrid}>
-              {airports.map((a) => (
-                <div key={a.name} className={styles.airportCard}>
-                  <h3 className={styles.airportName}>{a.name}</h3>
-                  <p className={styles.airportNote}>{a.note}</p>
+              {destinations.map((d) => (
+                <div key={d.name} className={styles.airportCard}>
+                  <h3 className={styles.airportName}>{d.name}</h3>
+                  <p className={styles.airportNote}>{d.note}</p>
                   <div className={styles.airportMeta}>
-                    <span>{a.distance}</span>
+                    <span>{d.distance}</span>
                     <span className={styles.metaDot} />
-                    <span>{a.time} в пути</span>
+                    <span>{d.time} в пути</span>
                   </div>
                 </div>
               ))}

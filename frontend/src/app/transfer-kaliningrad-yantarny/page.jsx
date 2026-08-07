@@ -3,31 +3,31 @@ import Footer from '../../components/Footer'
 import styles from './page.module.css'
 
 export const metadata = {
-  title: 'Трансфер Калининград — Варшава | Заказать такси с водителем | Амбер Трансфер',
+  title: 'Трансфер Калининград — Янтарный | Заказать такси с водителем | Амбер Трансфер',
   description:
-    'Трансфер из Калининграда в Варшаву на комфортных автомобилях бизнес-класса. Встреча с табличкой, фиксированная цена, профессиональные водители. Доставка в аэропорты Шопена и Модлин.',
-  keywords: 'трансфер Калининград Варшава, такси Калининград Варшава, заказать трансфер в Варшаву',
-  alternates: { canonical: '/transfer-kaliningrad-varshava' },
+    'Трансфер из Калининграда в Янтарный на комфортных автомобилях. Встреча с табличкой, фиксированная цена, профессиональные водители. Доставка к пляжу, отелю или частному дому.',
+  keywords: 'трансфер Калининград Янтарный, такси Калининград Янтарный, заказать трансфер в Янтарный',
+  alternates: { canonical: '/transfer-kaliningrad-yantarny' },
   openGraph: {
-    title: 'Трансфер Калининград — Варшава',
-    description: 'Персональный трансфер бизнес-класса из Калининграда в Варшаву.',
+    title: 'Трансфер Калининград — Янтарный',
+    description: 'Персональный трансфер из Калининграда в посёлок Янтарный.',
     locale: 'ru_RU',
     type: 'website',
   },
 }
 
-const airports = [
+const destinations = [
   {
-    name: 'Аэропорт им. Шопена',
-    note: 'главный международный аэропорт Варшавы',
-    distance: '~430 км',
-    time: '5–6 часов',
+    name: 'Пляж и променад',
+    note: 'главная точка притяжения курорта',
+    distance: '~48 км',
+    time: '~1 ч',
   },
   {
-    name: 'Аэропорт Модлин',
-    note: 'бюджетный аэропорт в 35 км от центра города',
-    distance: '~370 км',
-    time: '4.5–5 часов',
+    name: 'Центр посёлка',
+    note: 'отели, кафе, Янтарный комбинат',
+    distance: '~48 км',
+    time: '~1 ч',
   },
 ]
 
@@ -47,24 +47,20 @@ const advantages = [
 
 const faq = [
   {
-    q: 'Сколько времени занимает трансфер до Варшавы?',
-    a: 'В среднем 5–6 часов в пути с учётом пересечения границы. Время пограничного контроля зависит от загруженности пункта пропуска и может составлять от получаса до пары часов.',
+    q: 'Сколько времени занимает трансфер до Янтарного?',
+    a: 'В среднем около часа в пути — маршрут проходит без пересечения границы и пограничного контроля.',
   },
   {
     q: 'Можно ли доставить прямо к отелю или конкретному адресу?',
-    a: 'Да, вы указываете точный адрес подачи и назначения при бронировании — водитель довезёт до двери, а не только до аэропорта.',
+    a: 'Да, вы указываете точный адрес подачи и назначения при бронировании — водитель довезёт до двери, будь то отель, частный дом или пляж.',
   },
   {
-    q: 'Что делать, если рейс задержится?',
-    a: 'Водитель отслеживает статус рейса и скорректирует время подачи автомобиля — доплата за ожидание в разумных пределах не взимается.',
-  },
-  {
-    q: 'Какие документы нужны для пересечения границы?',
-    a: 'Понадобится действующий загранпаспорт и виза (если требуется для вашего гражданства). Ответственность за наличие необходимых документов лежит на пассажире — водитель помогает с логистикой поездки, но не отвечает за решения пограничной и таможенной служб.',
+    q: 'Можно ли заказать трансфер туда и обратно?',
+    a: 'Да, вы можете забронировать поездку в один конец или туда и обратно — укажите это при оформлении заявки, и менеджер согласует время обратного рейса.',
   },
 ]
 
-export default function TransferKaliningradVarshava() {
+export default function TransferKaliningradYantarny() {
   return (
     <>
       <Nav />
@@ -74,28 +70,23 @@ export default function TransferKaliningradVarshava() {
           <div className={styles.container}>
             <p className={styles.eyebrow}>Маршрут</p>
             <h1 className={styles.title}>
-              Трансфер Калининград <span className={styles.arrow}>→</span> Варшава
+              Трансфер Калининград <span className={styles.arrow}>→</span> Янтарный
             </h1>
             <p className={styles.lead}>
               Персональный трансфер на комфортном автомобиле с профессиональным
               водителем. Забираем из дома, отеля или аэропорта Храброво и
-              доставляем в любую точку Варшавы — без пересадок и лишних остановок.
+              доставляем в любую точку Янтарного — без пересадок и лишних остановок.
             </p>
 
             <div className={styles.facts}>
               <div className={styles.fact}>
-                <strong>~430 км</strong>
+                <strong>~48 км</strong>
                 <span>расстояние</span>
               </div>
               <div className={styles.factDivider} />
               <div className={styles.fact}>
-                <strong>5–6 ч</strong>
-                <span>время в пути</span>
-              </div>
-              <div className={styles.factDivider} />
-              <div className={styles.fact}>
                 <strong>~1 ч</strong>
-                <span>граница</span>
+                <span>время в пути</span>
               </div>
             </div>
 
@@ -105,20 +96,20 @@ export default function TransferKaliningradVarshava() {
 
         <section className={styles.section}>
           <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Куда именно в Варшаве</h2>
+            <h2 className={styles.sectionTitle}>Куда именно в Янтарном</h2>
             <p className={styles.sectionDesc}>
-              Довезём в любую точку города, включая оба аэропорта Варшавы.
+              Довезём в любую точку посёлка — к отелю, пляжу или частному дому.
             </p>
 
             <div className={styles.airportGrid}>
-              {airports.map((a) => (
-                <div key={a.name} className={styles.airportCard}>
-                  <h3 className={styles.airportName}>{a.name}</h3>
-                  <p className={styles.airportNote}>{a.note}</p>
+              {destinations.map((d) => (
+                <div key={d.name} className={styles.airportCard}>
+                  <h3 className={styles.airportName}>{d.name}</h3>
+                  <p className={styles.airportNote}>{d.note}</p>
                   <div className={styles.airportMeta}>
-                    <span>{a.distance}</span>
+                    <span>{d.distance}</span>
                     <span className={styles.metaDot} />
-                    <span>{a.time} в пути</span>
+                    <span>{d.time} в пути</span>
                   </div>
                 </div>
               ))}

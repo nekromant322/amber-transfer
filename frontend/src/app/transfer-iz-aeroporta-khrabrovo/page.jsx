@@ -3,31 +3,61 @@ import Footer from '../../components/Footer'
 import styles from './page.module.css'
 
 export const metadata = {
-  title: 'Трансфер Калининград — Варшава | Заказать такси с водителем | Амбер Трансфер',
+  title: 'Такси из аэропорта Храброво (Калининград) | Заказать трансфер с водителем | Амбер Трансфер',
   description:
-    'Трансфер из Калининграда в Варшаву на комфортных автомобилях бизнес-класса. Встреча с табличкой, фиксированная цена, профессиональные водители. Доставка в аэропорты Шопена и Модлин.',
-  keywords: 'трансфер Калининград Варшава, такси Калининград Варшава, заказать трансфер в Варшаву',
-  alternates: { canonical: '/transfer-kaliningrad-varshava' },
+    'Трансфер из аэропорта Храброво по Калининграду и области. Встреча с табличкой, фиксированная цена, профессиональные водители. Доставка в Зеленоградск, Светлогорск, Пионерский, Янтарный, Балтийск.',
+  keywords: 'такси Храброво, трансфер из аэропорта Калининград, такси аэропорт Калининград',
+  alternates: { canonical: '/transfer-iz-aeroporta-khrabrovo' },
   openGraph: {
-    title: 'Трансфер Калининград — Варшава',
-    description: 'Персональный трансфер бизнес-класса из Калининграда в Варшаву.',
+    title: 'Такси из аэропорта Храброво',
+    description: 'Персональный трансфер из аэропорта Храброво по Калининграду и области.',
     locale: 'ru_RU',
     type: 'website',
   },
 }
 
-const airports = [
+const destinations = [
   {
-    name: 'Аэропорт им. Шопена',
-    note: 'главный международный аэропорт Варшавы',
-    distance: '~430 км',
-    time: '5–6 часов',
+    name: 'Калининград',
+    note: 'город и любой район',
+    distance: '~20 км',
+    time: '~15 мин',
+    href: '/#booking',
   },
   {
-    name: 'Аэропорт Модлин',
-    note: 'бюджетный аэропорт в 35 км от центра города',
-    distance: '~370 км',
-    time: '4.5–5 часов',
+    name: 'Зеленоградск',
+    note: 'курорт и отправная точка на Куршскую косу',
+    distance: '~28 км',
+    time: '~40 мин',
+    href: '/transfer-kaliningrad-zelenogradsk',
+  },
+  {
+    name: 'Светлогорск',
+    note: 'променад и канатная дорога',
+    distance: '~40 км',
+    time: '~50 мин',
+    href: '/transfer-kaliningrad-svetlogorsk',
+  },
+  {
+    name: 'Пионерский',
+    note: 'пляж и набережная',
+    distance: '~38 км',
+    time: '~30 мин',
+    href: '/transfer-kaliningrad-pionersky',
+  },
+  {
+    name: 'Янтарный',
+    note: 'пляж и Янтарный комбинат',
+    distance: '~55 км',
+    time: '~60 мин',
+    href: '/transfer-kaliningrad-yantarny',
+  },
+  {
+    name: 'Балтийск',
+    note: 'морской порт и набережная',
+    distance: '~50 км',
+    time: '~80 мин',
+    href: '/transfer-khrabrovo-baltiysk',
   },
 ]
 
@@ -37,7 +67,7 @@ const classes = [
 ]
 
 const advantages = [
-  'Встреча с табличкой в аэропорту или у отеля',
+  'Встреча с табличкой прямо в зоне прилёта',
   'Фиксированная стоимость поездки без доплат по дороге',
   'Профессиональные русскоговорящие водители',
   'Комфортные автомобили любого класса на выбор',
@@ -47,24 +77,24 @@ const advantages = [
 
 const faq = [
   {
-    q: 'Сколько времени занимает трансфер до Варшавы?',
-    a: 'В среднем 5–6 часов в пути с учётом пересечения границы. Время пограничного контроля зависит от загруженности пункта пропуска и может составлять от получаса до пары часов.',
+    q: 'Как проходит встреча в аэропорту?',
+    a: 'Водитель ждёт вас в зоне прилёта с табличкой с вашим именем. Время подачи автомобиля рассчитывается с учётом фактического времени приземления рейса.',
   },
   {
     q: 'Можно ли доставить прямо к отелю или конкретному адресу?',
-    a: 'Да, вы указываете точный адрес подачи и назначения при бронировании — водитель довезёт до двери, а не только до аэропорта.',
+    a: 'Да, вы указываете точный адрес назначения при бронировании — водитель довезёт до двери, будь то отель, частный дом или пляж.',
   },
   {
     q: 'Что делать, если рейс задержится?',
     a: 'Водитель отслеживает статус рейса и скорректирует время подачи автомобиля — доплата за ожидание в разумных пределах не взимается.',
   },
   {
-    q: 'Какие документы нужны для пересечения границы?',
-    a: 'Понадобится действующий загранпаспорт и виза (если требуется для вашего гражданства). Ответственность за наличие необходимых документов лежит на пассажире — водитель помогает с логистикой поездки, но не отвечает за решения пограничной и таможенной служб.',
+    q: 'Можно ли заказать трансфер туда и обратно?',
+    a: 'Да, вы можете забронировать поездку в один конец или туда и обратно — укажите это при оформлении заявки, и менеджер согласует время обратного рейса в аэропорт.',
   },
 ]
 
-export default function TransferKaliningradVarshava() {
+export default function TransferIzAeroportaKhrabrovo() {
   return (
     <>
       <Nav />
@@ -72,30 +102,25 @@ export default function TransferKaliningradVarshava() {
       <main className={styles.main}>
         <section className={styles.hero}>
           <div className={styles.container}>
-            <p className={styles.eyebrow}>Маршрут</p>
+            <p className={styles.eyebrow}>Трансфер</p>
             <h1 className={styles.title}>
-              Трансфер Калининград <span className={styles.arrow}>→</span> Варшава
+              Такси из аэропорта <span className={styles.arrow}>→</span> Храброво
             </h1>
             <p className={styles.lead}>
               Персональный трансфер на комфортном автомобиле с профессиональным
-              водителем. Забираем из дома, отеля или аэропорта Храброво и
-              доставляем в любую точку Варшавы — без пересадок и лишних остановок.
+              водителем. Встречаем в зоне прилёта аэропорта Храброво и
+              доставляем в любую точку Калининграда и области — без пересадок и лишних остановок.
             </p>
 
             <div className={styles.facts}>
               <div className={styles.fact}>
-                <strong>~430 км</strong>
-                <span>расстояние</span>
+                <strong>6</strong>
+                <span>направлений</span>
               </div>
               <div className={styles.factDivider} />
               <div className={styles.fact}>
-                <strong>5–6 ч</strong>
+                <strong>от 15 мин</strong>
                 <span>время в пути</span>
-              </div>
-              <div className={styles.factDivider} />
-              <div className={styles.fact}>
-                <strong>~1 ч</strong>
-                <span>граница</span>
               </div>
             </div>
 
@@ -105,22 +130,22 @@ export default function TransferKaliningradVarshava() {
 
         <section className={styles.section}>
           <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Куда именно в Варшаве</h2>
+            <h2 className={styles.sectionTitle}>Куда именно из Храброво</h2>
             <p className={styles.sectionDesc}>
-              Довезём в любую точку города, включая оба аэропорта Варшавы.
+              Выберите город назначения — доставим в любую точку Калининграда и области.
             </p>
 
             <div className={styles.airportGrid}>
-              {airports.map((a) => (
-                <div key={a.name} className={styles.airportCard}>
-                  <h3 className={styles.airportName}>{a.name}</h3>
-                  <p className={styles.airportNote}>{a.note}</p>
+              {destinations.map((d) => (
+                <a key={d.name} href={d.href} className={styles.airportCard}>
+                  <h3 className={styles.airportName}>{d.name}</h3>
+                  <p className={styles.airportNote}>{d.note}</p>
                   <div className={styles.airportMeta}>
-                    <span>{a.distance}</span>
+                    <span>{d.distance}</span>
                     <span className={styles.metaDot} />
-                    <span>{a.time} в пути</span>
+                    <span>{d.time} в пути</span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>

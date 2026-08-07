@@ -128,8 +128,8 @@ export default function BookingWidget() {
           <label className={styles.fieldLabel}>
             <span className={styles.fieldIcon}>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M7 1L7 13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-                <circle cx="7" cy="7" r="4" stroke="currentColor" strokeWidth="1.2"/>
+                <circle cx="7" cy="5" r="3" stroke="currentColor" strokeWidth="1.2"/>
+                <path d="M7 13C7 13 2 9.5 2 5.5C2 2.91 4.24 1 7 1C9.76 1 12 2.91 12 5.5C12 9.5 7 13 7 13Z" stroke="currentColor" strokeWidth="1.2"/>
               </svg>
             </span>
             Куда
