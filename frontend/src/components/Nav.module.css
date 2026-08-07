@@ -5,14 +5,27 @@
   right: 0;
   z-index: 100;
   padding: 28px 0;
-  transition: padding 0.4s ease, background 0.4s ease, backdrop-filter 0.4s ease;
+  transition: padding 0.4s ease;
+}
+
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(8, 8, 8, 0.88);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232, 169, 0, 0.08);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .nav.scrolled {
   padding: 16px 0;
-  background: rgba(8, 8, 8, 0.88);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(232, 169, 0, 0.08);
+}
+
+.nav.scrolled::before {
+  opacity: 1;
 }
 
 .inner {
@@ -85,6 +98,8 @@
 
 .burger {
   display: none;
+  position: relative;
+  z-index: 101;
   flex-direction: column;
   gap: 5px;
   padding: 4px;
