@@ -11,7 +11,7 @@
 /* hero */
 
 .hero {
-  padding: 80px 0 100px;
+  padding: 80px 0 64px;
   background: var(--black);
   border-bottom: 1px solid var(--black-border);
 }
@@ -106,7 +106,7 @@
 /* generic section */
 
 .section {
-  padding: 90px 0;
+  padding: 64px 0;
   border-bottom: 1px solid var(--black-border);
 }
 
