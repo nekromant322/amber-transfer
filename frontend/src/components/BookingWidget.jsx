@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 import styles from './BookingWidget.module.css'
 import CityInput from './CityInput'
 
@@ -43,6 +45,10 @@ export default function BookingWidget() {
     setError('')
     if (!from || !to || !date || !phone) {
       setError('Пожалуйста, заполните все поля')
+      return
+    }
+    if (!isValidPhoneNumber(phone)) {
+      setError('Введите корректный номер телефона')
       return
     }
     if (!passport) {
@@ -219,13 +225,17 @@ export default function BookingWidget() {
             </span>
             Телефон
           </label>
-          <input
+          <PhoneInput
             className={styles.phoneInput}
-            type="tel"
+            international
+            defaultCountry="RU"
             placeholder="+7 (___) ___-__-__"
             value={phone}
-            onChange={e => setPhone(e.target.value)}
+            onChange={value => setPhone(value || '')}
           />
+          {phone && !isValidPhoneNumber(phone) && (
+            <p className={styles.phoneHint}>Проверьте номер телефона</p>
+          )}
         </div>
 
       {error && <p className={styles.errorMessage}>{error}</p>}
