@@ -1,5 +1,21 @@
+import { Cormorant_Garamond, Raleway } from 'next/font/google'
 import './globals.css'
 import OrganizationSchema from '../components/OrganizationSchema'
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+})
+
+const raleway = Raleway({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-raleway',
+  display: 'swap',
+})
 
 export const metadata = {
   icons: { icon: '/favicon.svg' },
@@ -19,15 +35,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ru" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="ru" suppressHydrationWarning className={`${cormorantGaramond.variable} ${raleway.variable}`}>
       <body>
         <OrganizationSchema />
         {children}

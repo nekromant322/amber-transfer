@@ -1,6 +1,6 @@
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
-import styles from './page.module.css'
+import styles from '../../styles/TransferRoutePage.module.css'
 import FaqSchema from '../../components/FaqSchema'
 
 export const metadata = {

@@ -10,8 +10,8 @@
   --white-dim: rgba(255, 255, 255, 0.55);
   --white-faint: rgba(255, 255, 255, 0.08);
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Raleway', sans-serif;
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-raleway), sans-serif;
 }
 
 *, *::before, *::after {
