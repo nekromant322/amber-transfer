@@ -1,6 +1,7 @@
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
 import styles from './page.module.css'
+import FaqSchema from '../../components/FaqSchema'
 
 export const metadata = {
   title: 'Трансфер Калининград — Варшава | Заказать такси с водителем | Амбер Трансфер',
@@ -68,6 +69,7 @@ export default function TransferKaliningradVarshava() {
   return (
     <>
       <Nav />
+      <FaqSchema faq={faq} />
 
       <main className={styles.main}>
         <section className={styles.hero}>

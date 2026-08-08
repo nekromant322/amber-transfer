@@ -1,4 +1,5 @@
 import './globals.css'
+import OrganizationSchema from '../components/OrganizationSchema'
 
 export const metadata = {
   icons: { icon: '/favicon.svg' },
@@ -27,7 +28,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <OrganizationSchema />
+        {children}
+      </body>
     </html>
   )
 }

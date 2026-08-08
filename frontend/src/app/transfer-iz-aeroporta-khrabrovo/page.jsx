@@ -1,6 +1,7 @@
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
 import styles from './page.module.css'
+import FaqSchema from '../../components/FaqSchema'
 
 export const metadata = {
   title: 'Такси из аэропорта Храброво (Калининград) | Заказать трансфер с водителем | Амбер Трансфер',
@@ -98,6 +99,7 @@ export default function TransferIzAeroportaKhrabrovo() {
   return (
     <>
       <Nav />
+      <FaqSchema faq={faq} />
 
       <main className={styles.main}>
         <section className={styles.hero}>
