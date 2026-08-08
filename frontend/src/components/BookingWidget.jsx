@@ -23,6 +23,7 @@ export default function BookingWidget() {
   const [error, setError] = useState('')
   const [price, setPrice] = useState(null)
   const [priceLoading, setPriceLoading] = useState(false)
+  const [consent, setConsent] = useState(false)
 
   useEffect(() => {
     if (!from || !to) {
@@ -53,6 +54,10 @@ export default function BookingWidget() {
     }
     if (!passport) {
       setError('Пожалуйста, выберите тип паспорта')
+      return
+    }
+    if (!consent) {
+      setError('Необходимо согласие на обработку персональных данных')
       return
     }
     setLoading(true)
@@ -237,6 +242,21 @@ export default function BookingWidget() {
             <p className={styles.phoneHint}>Проверьте номер телефона</p>
           )}
         </div>
+
+      <label className={styles.consentRow}>
+        <input
+          type="checkbox"
+          className={styles.consentCheckbox}
+          checked={consent}
+          onChange={e => setConsent(e.target.checked)}
+        />
+        <span className={styles.consentText}>
+          Согласен(а) на{' '}
+          <a href="/politika-konfidencialnosti" target="_blank" rel="noopener noreferrer">
+            обработку персональных данных
+          </a>
+        </span>
+      </label>
 
       {error && <p className={styles.errorMessage}>{error}</p>}
 

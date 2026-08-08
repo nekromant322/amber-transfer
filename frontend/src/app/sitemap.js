@@ -26,11 +26,22 @@ const routes = [
   'transfer-iz-aeroporta-khrabrovo',
 ]
 
+const staticPages = ['politika-konfidencialnosti']
+
 export default function sitemap() {
-  return routes.map((route) => ({
+  const routeEntries = routes.map((route) => ({
     url: route ? `${baseUrl}/${route}` : baseUrl,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: route === '' ? 1 : 0.8,
   }))
+
+  const staticEntries = staticPages.map((route) => ({
+    url: `${baseUrl}/${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'yearly',
+    priority: 0.3,
+  }))
+
+  return [...routeEntries, ...staticEntries]
 }

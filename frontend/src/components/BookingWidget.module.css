@@ -343,6 +343,58 @@
   letter-spacing: 0.03em;
 }
 
+.consentRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  cursor: pointer;
+}
+
+.consentCheckbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 1px solid var(--black-border);
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.consentCheckbox:checked {
+  background: var(--amber);
+  border-color: var(--amber);
+}
+
+.consentCheckbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--black);
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+
+.consentText {
+  font-size: 0.78rem;
+  color: var(--white-dim);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.consentText a {
+  color: var(--amber);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .errorMessage {
   font-size: 0.75rem;
   color: #ff6b6b;
