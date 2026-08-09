@@ -5,6 +5,7 @@ const navLinks = [
   { label: 'Услуги', href: '/#services' },
   { label: 'Тарифы', href: '/#tariffs' },
   { label: 'Вопросы и ответы', href: '/#faq' },
+  { label: 'Контакты', href: '/kontakty' },
 ]
 
 export default function Footer() {
