@@ -26,7 +26,7 @@ const routes = [
   'transfer-iz-aeroporta-khrabrovo',
 ]
 
-const staticPages = ['kontakty', 'politika-konfidencialnosti']
+const staticPages = ['contacts', 'politika-konfidencialnosti']
 
 export default function sitemap() {
   const routeEntries = routes.map((route) => ({

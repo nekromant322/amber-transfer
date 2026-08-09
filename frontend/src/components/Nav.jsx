@@ -8,7 +8,7 @@ const links = [
   { label: 'Услуги', href: '/#services' },
   { label: 'Тарифы', href: '/#tariffs' },
   { label: 'Вопросы', href: '/#faq' },
-  { label: 'Контакты', href: '/kontakty' },
+  { label: 'Контакты', href: '/contacts' },
 ]
 
 export default function Nav() {

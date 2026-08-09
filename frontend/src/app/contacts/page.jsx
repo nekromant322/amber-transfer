@@ -7,7 +7,7 @@ export const metadata = {
   title: 'Контакты | Амбер Трансфер',
   description:
     'Контакты Амбер Трансфер: телефон, Telegram, реквизиты. Трансферы из Калининграда в Польшу, Литву и другие страны Европы.',
-  alternates: { canonical: '/kontakty' },
+  alternates: { canonical: '/contacts' },
   robots: { index: true, follow: true },
 }
 
@@ -15,7 +15,7 @@ const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
   name: 'Контакты Амбер Трансфер',
-  url: 'https://ambertransfer.ru/kontakty',
+  url: 'https://ambertransfer.ru/contacts',
   mainEntity: {
     '@type': 'TaxiService',
     name: 'Амбер Трансфер',
