@@ -11,7 +11,11 @@ const categories = [
     title: 'Легковой автомобиль',
     photo: '/cars/sedan-category.png',
     cars: [
-      { id: 1, name: 'Автомобиль 1', photos: [] },
+      {
+        id: 1,
+        name: 'Kia Sportage',
+        photos: ['/cars/kia-sportage/1.png', '/cars/kia-sportage/2.png', '/cars/kia-sportage/3.png'],
+      },
       { id: 2, name: 'Автомобиль 2', photos: [] },
       { id: 3, name: 'Автомобиль 3', photos: [] },
     ],
