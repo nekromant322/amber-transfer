@@ -16,7 +16,11 @@ const categories = [
         name: 'Kia Sportage',
         photos: ['/cars/kia-sportage/1.png', '/cars/kia-sportage/2.png', '/cars/kia-sportage/3.png'],
       },
-      { id: 2, name: 'Автомобиль 2', photos: [] },
+      {
+        id: 2,
+        name: 'Volkswagen Passat',
+        photos: ['/cars/vw-passat/1.png'],
+      },
       { id: 3, name: 'Автомобиль 3', photos: [] },
     ],
   },
