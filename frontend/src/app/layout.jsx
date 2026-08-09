@@ -25,6 +25,12 @@ export const metadata = {
   verification: {
     other: { 'yandex-verification': '81a1a020d93aeb05' },
   },
+  other: {
+    'geo.region': 'RU-KGD',
+    'geo.placename': 'Kaliningrad',
+    'geo.position': '54.7104;20.4522',
+    ICBM: '54.7104, 20.4522',
+  },
   openGraph: {
     title: 'Амбер Трансфер — Калининград · Европа',
     description: 'Персональные трансферы бизнес-класса из Калининграда в Европу.',
