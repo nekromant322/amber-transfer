@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 007_create_road_distances
+      author: transfer
+      changes:
+        - createTable:
+            tableName: road_distances
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: city_from
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city_to
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: distance_km
+                  type: DOUBLE PRECISION
+                  constraints:
+                    nullable: false
+        - addUniqueConstraint:
+            tableName: road_distances
+            columnNames: city_from, city_to
+            constraintName: uq_road_distances_from_to

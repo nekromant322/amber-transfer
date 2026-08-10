@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 006_create_city_coordinates
+      author: transfer
+      changes:
+        - createTable:
+            tableName: city_coordinates
+            columns:
+              - column:
+                  name: city
+                  type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: latitude
+                  type: DOUBLE PRECISION
+                  constraints:
+                    nullable: false
+              - column:
+                  name: longitude
+                  type: DOUBLE PRECISION
+                  constraints:
+                    nullable: false

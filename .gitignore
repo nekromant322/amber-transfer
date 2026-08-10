@@ -8,6 +8,8 @@ frontend/.env*.local
 # ── Backend ───────────────────────────────────────────────
 backend/target/
 backend/task.txt
+backend/.env
+backend/.env.local
 
 # ── Root ──────────────────────────────────────────────────
 /task.txt

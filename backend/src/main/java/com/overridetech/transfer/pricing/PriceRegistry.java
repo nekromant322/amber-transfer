@@ -7,9 +7,11 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Slf4j
@@ -41,6 +43,24 @@ public class PriceRegistry {
 
     public Optional<Integer> getCustomsPrice(String from, String to) {
         return lookup(customsPrices, from, to);
+    }
+
+    /**
+     * All cities that have a known routePrices entry paired with the given city
+     * (in either column order). Used to find a reference city when extrapolating
+     * a price for a city that isn't in the sheet.
+     */
+    public Set<String> destinationsFrom(String city) {
+        String needle = city.trim().toLowerCase();
+        Set<String> result = new HashSet<>();
+        for (String key : routePrices.keySet()) {
+            int sep = key.indexOf('|');
+            String a = key.substring(0, sep);
+            String b = key.substring(sep + 1);
+            if (a.equals(needle)) result.add(b);
+            else if (b.equals(needle)) result.add(a);
+        }
+        return result;
     }
 
     private Optional<Integer> lookup(Map<String, Integer> map, String from, String to) {

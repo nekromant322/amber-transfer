@@ -1,5 +1,6 @@
 package com.overridetech.transfer.controller;
 
+import com.overridetech.transfer.pricing.FallbackPriceCalculator;
 import com.overridetech.transfer.pricing.PriceRegistry;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/price")
@@ -16,6 +18,7 @@ import java.util.Map;
 public class PriceController {
 
     private final PriceRegistry priceRegistry;
+    private final FallbackPriceCalculator fallbackPriceCalculator;
 
     @GetMapping
     public ResponseEntity<?> getPrice(
@@ -23,12 +26,23 @@ public class PriceController {
             @RequestParam String to,
             @RequestParam(defaultValue = "eu") String passport
     ) {
-        return priceRegistry.getPrice(from, to)
+        Optional<Integer> exact = priceRegistry.getPrice(from, to);
+        if (exact.isPresent()) {
+            return ResponseEntity.ok(Map.of(
+                    "from", from,
+                    "to", to,
+                    "passport", passport,
+                    "price", exact.get()
+            ));
+        }
+
+        return fallbackPriceCalculator.estimate(from, to, passport)
                 .<ResponseEntity<?>>map(price -> ResponseEntity.ok(Map.of(
                         "from", from,
                         "to", to,
                         "passport", passport,
-                        "price", price
+                        "price", price,
+                        "estimated", true
                 )))
                 .orElse(ResponseEntity.notFound().build());
     }
