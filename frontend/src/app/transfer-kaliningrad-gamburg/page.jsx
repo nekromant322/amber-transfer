@@ -14,6 +14,7 @@ export const metadata = {
     description: 'Персональный трансфер бизнес-класса из Калининграда в Гамбург.',
     locale: 'ru_RU',
     type: 'website',
+    images: [{ url: 'https://ambertransfer.ru/cars/kia-sportage/1.png', width: 720, height: 960, alt: 'Амбер Трансфер — Kia Sportage' }],
   },
 }
 

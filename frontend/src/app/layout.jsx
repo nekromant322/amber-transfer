@@ -36,6 +36,13 @@ export const metadata = {
     description: 'Персональные трансферы бизнес-класса из Калининграда в Европу.',
     locale: 'ru_RU',
     type: 'website',
+    images: [{ url: 'https://ambertransfer.ru/cars/kia-sportage/1.png', width: 720, height: 960, alt: 'Амбер Трансфер — Kia Sportage' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Амбер Трансфер — Калининград · Европа',
+    description: 'Персональные трансферы бизнес-класса из Калининграда в Европу.',
+    images: ['https://ambertransfer.ru/cars/kia-sportage/1.png'],
   },
 }
 
