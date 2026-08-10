@@ -5,6 +5,7 @@ import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 import styles from './BookingWidget.module.css'
 import CityInput from './CityInput'
+import { trackGoal } from '../lib/analytics'
 
 function formatDate(val) {
   if (!val) return null
@@ -74,6 +75,7 @@ export default function BookingWidget() {
         return
       }
       setSubmitted(true)
+      trackGoal('booking_submit')
     } catch {
       setError('Ошибка соединения с сервером')
     } finally {

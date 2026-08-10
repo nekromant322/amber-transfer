@@ -1,6 +1,7 @@
 import { Cormorant_Garamond, Raleway } from 'next/font/google'
 import './globals.css'
 import OrganizationSchema from '../components/OrganizationSchema'
+import YandexMetrika from '../components/YandexMetrika'
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ['latin', 'cyrillic'],
@@ -50,6 +51,7 @@ export default function RootLayout({ children }) {
     <html lang="ru" suppressHydrationWarning className={`${cormorantGaramond.variable} ${raleway.variable}`}>
       <body>
         <OrganizationSchema />
+        <YandexMetrika />
         {children}
       </body>
     </html>
