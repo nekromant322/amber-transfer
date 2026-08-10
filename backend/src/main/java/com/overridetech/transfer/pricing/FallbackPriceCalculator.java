@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -16,8 +18,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * Estimates a price for Kaliningrad <-> city routes that aren't in the price sheet.
  * <p>
  * All routes cross one of two border checkpoints: Kybartai (open to any passport) or
- * Grzechotki (open to EU passports only). The base price to reach each checkpoint already
- * lives in the "tamojnya base price" sheet and includes border-crossing time
+ * Grzechotki (open to EU passports only). Whichever eligible checkpoint is geographically
+ * closest to the destination is used. The base price to reach that checkpoint already lives in
+ * the "tamojnya base price" sheet and includes border-crossing time
  * ({@link PriceRegistry#getCustomsPrice}). The rest of the trip is priced per km, using the
  * nearest already-priced city as a reference rate.
  */
@@ -58,18 +61,42 @@ public class FallbackPriceCalculator {
     }
 
     private Optional<Integer> computeEstimate(String target, String passport) {
-        Set<String> corridors = "eu".equalsIgnoreCase(passport)
+        Set<String> eligibleCorridors = "eu".equalsIgnoreCase(passport)
                 ? Set.of(CORRIDOR_LITHUANIA, CORRIDOR_POLAND)
                 : Set.of(CORRIDOR_LITHUANIA);
 
-        Integer best = null;
-        for (String border : corridors) {
+        // Try whichever eligible border checkpoint is actually closest to the destination first -
+        // that's the one a driver would really cross. Falling back to the other eligible corridor
+        // only kicks in if the nearest one has no usable price data. We deliberately do NOT pick
+        // whichever corridor's extrapolated arithmetic happens to be cheaper: over long distances
+        // a favorable per-km rate from one reference city can make a geographically absurd detour
+        // (e.g. Kaliningrad -> Grzechotki -> Tallinn) look cheaper than the sane route.
+        for (String border : orderByProximityToTarget(target, eligibleCorridors)) {
             Integer price = estimateViaCorridor(target, border);
-            if (price != null && (best == null || price < best)) {
-                best = price;
+            if (price != null) {
+                return Optional.of(price);
             }
         }
-        return Optional.ofNullable(best);
+        return Optional.empty();
+    }
+
+    private List<String> orderByProximityToTarget(String target, Set<String> eligibleCorridors) {
+        double[] targetCoords;
+        try {
+            targetCoords = geocodingService.getCoordinates(target);
+        } catch (RuntimeException e) {
+            return List.copyOf(eligibleCorridors); // let estimateViaCorridor report the geocoding failure
+        }
+
+        return eligibleCorridors.stream()
+                .sorted(Comparator.comparingDouble(border -> {
+                    try {
+                        return haversineKm(targetCoords, geocodingService.getCoordinates(border));
+                    } catch (RuntimeException e) {
+                        return Double.MAX_VALUE;
+                    }
+                }))
+                .toList();
     }
 
     private Integer estimateViaCorridor(String target, String border) {

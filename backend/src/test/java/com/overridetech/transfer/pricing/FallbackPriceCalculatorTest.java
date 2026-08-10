@@ -29,6 +29,7 @@ class FallbackPriceCalculatorTest {
     private static final double[] ELBLAG = {54.16, 19.40};
     private static final double[] CHERNYAKHOVSK = {54.64, 21.81};
     private static final double[] KRAKOW = {50.05, 19.99};
+    private static final double[] TALLINN = {59.44, 24.75};
 
     @Mock
     private PriceRegistry priceRegistry;
@@ -51,6 +52,7 @@ class FallbackPriceCalculatorTest {
         lenient().when(geocodingService.getCoordinates("elblag")).thenReturn(ELBLAG);
         lenient().when(geocodingService.getCoordinates("chernyakhovsk")).thenReturn(CHERNYAKHOVSK);
         lenient().when(geocodingService.getCoordinates("krakow")).thenReturn(KRAKOW);
+        lenient().when(geocodingService.getCoordinates("tallinn")).thenReturn(TALLINN);
     }
 
     @Test
@@ -115,34 +117,49 @@ class FallbackPriceCalculatorTest {
     }
 
     @Test
-    void euPassportPicksTheCheaperOfTheTwoEligibleCorridors() {
-        // Target sits right next to the Poland border - Grzechotki should win.
-        when(priceRegistry.getCustomsPrice("kaliningrad", "kybartai")).thenReturn(Optional.of(80));
+    void euPassportUsesTheGeographicallyNearerBorderCheckpoint() {
+        // Elblag sits right next to the Poland border, far from Kybartai - Grzechotki must be
+        // tried first and, since it succeeds, Kybartai's data should never even be consulted.
         when(priceRegistry.getCustomsPrice("kaliningrad", "grzechotki")).thenReturn(Optional.of(90));
-        when(priceRegistry.destinationsFrom("kaliningrad")).thenReturn(Set.of("vilnius", "gdansk"));
-        when(priceRegistry.getPrice("kaliningrad", "vilnius")).thenReturn(Optional.of(180));
+        when(priceRegistry.destinationsFrom("kaliningrad")).thenReturn(Set.of("gdansk"));
         when(priceRegistry.getPrice("kaliningrad", "gdansk")).thenReturn(Optional.of(200));
-
-        when(distanceService.calculateDistance("kybartai", "vilnius")).thenReturn(100.0);
-        when(distanceService.calculateDistance("kybartai", "elblag")).thenReturn(250.0);
         when(distanceService.calculateDistance("grzechotki", "gdansk")).thenReturn(90.0);
         when(distanceService.calculateDistance("grzechotki", "elblag")).thenReturn(40.0);
 
-        // via Kybartai:   80 + ((180-80)/100) * 250 = 330
-        // via Grzechotki: 90 + ((200-90)/90) * 40  ~= 138.9 -> rounds up to 140
+        // rate = (200-90)/90 = 1.2222; price = 90 + 1.2222*40 = 138.9 -> rounds up to 140
         assertThat(calculator.estimate("Kaliningrad", "Elblag", "eu")).contains(140);
+        verify(priceRegistry, never()).getCustomsPrice("kaliningrad", "kybartai");
     }
 
     @Test
-    void nonEuPassportIsForcedThroughLithuaniaEvenWhenGrzechotkiWouldBeCheaper() {
+    void nonEuPassportIsForcedThroughKybartaiEvenWhenGrzechotkiIsNearer() {
+        // Elblag is right next to Grzechotki, but that checkpoint isn't open to this passport -
+        // the only eligible corridor is Kybartai, however roundabout the resulting route is.
         when(priceRegistry.getCustomsPrice("kaliningrad", "kybartai")).thenReturn(Optional.of(80));
-        when(priceRegistry.destinationsFrom("kaliningrad")).thenReturn(Set.of("vilnius", "gdansk"));
+        when(priceRegistry.destinationsFrom("kaliningrad")).thenReturn(Set.of("vilnius"));
         when(priceRegistry.getPrice("kaliningrad", "vilnius")).thenReturn(Optional.of(180));
         when(distanceService.calculateDistance("kybartai", "vilnius")).thenReturn(100.0);
         when(distanceService.calculateDistance("kybartai", "elblag")).thenReturn(250.0);
 
         // Only the Kybartai corridor may be used: 80 + ((180-80)/100) * 250 = 330
         assertThat(calculator.estimate("Kaliningrad", "Elblag", "other")).contains(330);
+        verify(priceRegistry, never()).getCustomsPrice("kaliningrad", "grzechotki");
+    }
+
+    @Test
+    void doesNotFallBackToAFartherCorridorJustBecauseItsArithmeticIsCheaper() {
+        // Regression test: Tallinn is far closer to Kybartai than to Grzechotki. Even though a
+        // cheap Grzechotki-side reference city could arithmetically produce a lower total when
+        // its rate is stretched over the much longer Grzechotki-to-Tallinn distance, the nearer
+        // corridor must be tried first - and since it has usable data, Grzechotki's price data
+        // must never even be looked at.
+        when(priceRegistry.getCustomsPrice("kaliningrad", "kybartai")).thenReturn(Optional.of(130));
+        when(priceRegistry.destinationsFrom("kaliningrad")).thenReturn(Set.of("vilnius"));
+        when(priceRegistry.getPrice("kaliningrad", "vilnius")).thenReturn(Optional.of(180));
+        when(distanceService.calculateDistance("kybartai", "vilnius")).thenReturn(100.0);
+        when(distanceService.calculateDistance("kybartai", "tallinn")).thenReturn(600.0);
+
+        assertThat(calculator.estimate("Kaliningrad", "Tallinn", "eu")).isPresent();
         verify(priceRegistry, never()).getCustomsPrice("kaliningrad", "grzechotki");
     }
 
