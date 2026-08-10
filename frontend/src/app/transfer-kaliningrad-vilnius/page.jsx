@@ -2,6 +2,7 @@ import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
 import styles from '../../styles/TransferRoutePage.module.css'
 import FaqSchema from '../../components/FaqSchema'
+import ArticleSchema from '../../components/ArticleSchema'
 
 export const metadata = {
   title: 'Трансфер Калининград — Вильнюс | Заказать такси с водителем | Амбер Трансфер',
@@ -65,11 +66,14 @@ const faq = [
   },
 ]
 
+const articleText = [...advantages, ...faq.map((item) => `${item.q} ${item.a}`)].join(' ')
+
 export default function TransferKaliningradVilnius() {
   return (
     <>
       <Nav />
       <FaqSchema faq={faq} />
+      <ArticleSchema url="https://ambertransfer.ru/transfer-kaliningrad-vilnius" headline="Трансфер Калининград — Вильнюс" text={articleText} />
 
       <main className={styles.main}>
         <section className={styles.hero}>
