@@ -48,7 +48,6 @@ export default function YandexMetrika() {
                ssr:true,
                webvisor:true,
                clickmap:true,
-               ecommerce:"dataLayer",
                referrer: document.referrer,
                url: location.href,
                accurateTrackBounce:true,
