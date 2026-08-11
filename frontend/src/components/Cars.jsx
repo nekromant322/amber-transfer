@@ -18,13 +18,13 @@ const categories = [
       },
       {
         id: 2,
-        name: 'Volkswagen Passat',
-        photos: ['/cars/vw-passat/1.png'],
+        name: 'Mercedes-Benz E-Class',
+        photos: ['/cars/mercedes-e-class/1.png', '/cars/mercedes-e-class/2.png'],
       },
       {
         id: 3,
-        name: 'Mercedes-Benz E-Class',
-        photos: ['/cars/mercedes-e-class/1.png', '/cars/mercedes-e-class/2.png'],
+        name: 'Volkswagen Passat',
+        photos: ['/cars/vw-passat/1.png'],
       },
     ],
   },
