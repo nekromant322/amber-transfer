@@ -21,7 +21,11 @@ const categories = [
         name: 'Volkswagen Passat',
         photos: ['/cars/vw-passat/1.png'],
       },
-      { id: 3, name: 'Автомобиль 3', photos: [] },
+      {
+        id: 3,
+        name: 'Mercedes-Benz E-Class',
+        photos: ['/cars/mercedes-e-class/1.png', '/cars/mercedes-e-class/2.png'],
+      },
     ],
   },
   {
