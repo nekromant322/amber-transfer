@@ -1,0 +1,48 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  display: block;
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 2px;
+  padding: 32px;
+  transition: border-color 0.3s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(232, 169, 0, 0.35);
+  transform: translateY(-2px);
+}
+
+.cardDate {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 14px;
+}
+
+.cardTitle {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.cardDesc {
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}

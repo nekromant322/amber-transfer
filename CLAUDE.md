@@ -90,7 +90,12 @@ If `npm run dev` reports the port already in use, or you see `Manifest file is e
   - `DatePicker.jsx` — **unused/orphaned**, `BookingWidget` uses a plain `<input type="date">` instead.
   - `HowItWorks.jsx`, `Services.jsx`, `Tariffs.jsx`, `FAQ.jsx` — static content sections.
   - `Footer.jsx` — phones (`+7 950 008 4457`, `+373 69 140 940`), Telegram `@amber_transfer`. **No email** (intentionally removed).
+- `src/app/transfer-*` — programmatic SEO landing pages, one per route/region (Gdańsk, Warsaw, Vilnius, etc.), sharing `styles/TransferRoutePage.module.css` + `FaqSchema`/`ArticleSchema` JSON-LD.
+- `src/app/articles/` — SEO articles section (`/articles` index + `/articles/<slug>`), backed by `src/data/articles.js` (single source of truth for title/description/date, consumed by the index page, each article's metadata, and `sitemap.js`).
 - All page copy is in Russian.
+
+### ⚠️ URL rule — no transliteration of common words
+Route slugs may transliterate **proper nouns** (city/country names: `transfer-kaliningrad-gdansk`, `-varshava`, `-vilnius`) since that matches how people search. But **never transliterate ordinary Russian words into a URL** (e.g. `/stati` for "статьи", `peresechenie-granicy` for "пересечение границы") — translate them into English instead (`/articles`, `border-crossing-...`). Page copy stays Russian; only the URL segments for common nouns go through English, not phonetic transliteration.
 
 ### ⚠️ Font rule — never put digits in `--font-display`
 `--font-display` (Cormorant Garamond) renders numerals as old-style figures — its "1" glyph is a bare vertical stroke that reads as a roman numeral "I" (this has already caused a visible bug: "~1 ч" looked like "~I ч"). **Any text containing digits (stats, distances, times, seat counts, prices, dates) must use `--font-body` (Raleway), never `--font-display`, regardless of how "premium" the serif looks.** `font-variant-numeric: lining-nums` is set globally on `body` in `globals.css` as a baseline safeguard, but font-family choice is what actually matters — don't rely on the CSS property alone. Only headline/title text with no digits may use `--font-display`.

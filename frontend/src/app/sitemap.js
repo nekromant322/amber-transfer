@@ -1,3 +1,5 @@
+import { articles } from '../data/articles'
+
 export const dynamic = 'force-static'
 
 const baseUrl = 'https://ambertransfer.ru'
@@ -26,7 +28,7 @@ const routes = [
   'transfer-iz-aeroporta-khrabrovo',
 ]
 
-const staticPages = ['contacts', 'politika-konfidencialnosti']
+const staticPages = ['contacts', 'politika-konfidencialnosti', 'articles']
 
 export default function sitemap() {
   const routeEntries = routes.map((route) => ({
@@ -43,5 +45,12 @@ export default function sitemap() {
     priority: 0.3,
   }))
 
-  return [...routeEntries, ...staticEntries]
+  const articleEntries = articles.map((a) => ({
+    url: `${baseUrl}/articles/${a.slug}`,
+    lastModified: new Date(a.date),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }))
+
+  return [...routeEntries, ...staticEntries, ...articleEntries]
 }
